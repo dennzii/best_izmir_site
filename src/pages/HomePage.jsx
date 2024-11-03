@@ -8,7 +8,7 @@ import { Welcome } from "../sections/Welcome";
 import { Nav } from "../Components/Nav"
 
 import AboutPage from "./AboutPage";
-
+//merhaba merhaba
 
 
 function HomePage() {
@@ -22,13 +22,13 @@ function HomePage() {
             <Welcome/>
         </section>
 
-        <section class="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-1 flex items-center"></section>
+        <section className="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-1 flex items-center"></section>
 
         <section className="padding-x">
             <Annoucements/>
         </section>
 
-        <section class="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-1 flex items-center"></section>
+        <section className="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-1 flex items-center"></section>
 
         <section className="padding-x bg-center">
             <Gallery/>
