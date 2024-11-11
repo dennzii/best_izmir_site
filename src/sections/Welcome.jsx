@@ -18,7 +18,7 @@ export const Welcome = () => {
         <Counter  targetNumber={3000} duration={3000}></Counter>
         <Button className="" label={"Apply Now!"}></Button>
       </div>
-      <div className="relative flex-1 flex  justify-center items-center min-h-screen bg-blue-100">
+      <div className="relative flex-1 flex  justify-center items-center min-h-screen ">
         <img src={izmir_foto}>
         </img>
       </div>

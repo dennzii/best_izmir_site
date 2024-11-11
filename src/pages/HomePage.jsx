@@ -15,9 +15,11 @@ function HomePage() {
     
     return(
     <main className="relative">
-        <section class="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-2 flex items-center"></section>
-        <section className=""><Nav/></section>
-    <p dhkjsdnk> </p>
+        <section className="bg-gradient-to-r from-blue-500 via-yellow-500 to-green-500 h-2 flex items-center"></section>
+        <section className="py-5">
+            <Nav/>
+            </section>
+
         <section className="xl:padding- wide:padding-r">
             <Welcome/>
         </section>
