@@ -3,7 +3,7 @@
 export const AboutUs = () => {
   return (
     <section>
-      <h1 className="text-4xl font-palanquin font-bold justify-start ml-20">About Us</h1>
+      <h1 className="text-8xl font-palanquin font-bold justify-start mt-5 ml-5">About Us</h1>
       <p className=" text-xl
       ml-20
       mr-20

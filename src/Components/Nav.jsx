@@ -1,9 +1,11 @@
-import logo_normal from "../assets/logo_normal.png";
+import logo_beyaz from "../assets/logo_beyaz.png";
 import {navLinks} from "../constants"
 import React, { useState, useEffect } from 'react';
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
+
+  const height = window.innerHeight;
 
   useEffect(() => {
     const handleScroll = ()=> {
@@ -15,24 +17,25 @@ export const Nav = () => {
   }, []);
 
   return (
-   <header className={`fixed w-full padding-x py-5 px-5 z-30 transition-all duration-800 ease-in-out ${
-   scrolled ? `bg-blue-200 shadow-lg py-0` : `bg-transparent`
+    
+   <header className={`fixed w-full padding-x z-50 transition-transform duration-800 ease-in-out ${
+   scrolled ? `bg-black shadow-lg ` : `bg-transparent`
    }`}
    >
+   
     <nav className="flex justify-between items-center">
       <a href="/">
-      <img className={`${scrolled ? 'w-20 h-20' : 'w-32 h-32'}`}
-      src={logo_normal}
+      <img className={`mt-3 ml-5 mb-3 ${scrolled ? 'w-32 h-auto' : 'w-32 h-auto'}`}
+      src={logo_beyaz}
       alt="Logo"
-      width={130}
-      height={130}>
+      >
       </img>
       </a>
       
       <ul className="flex space-x-6 justify-center px-5 gap-16 max-lg:hidden mr-20">
         {navLinks.map(item => (
-          <li key={item.label} className="border-b-2 border-transparent hover:border-purple-400">
-            <a href={item.href} className="font-semibold  leading-normal text-lg text-slate-black">
+          <li key={item.label} className="border-b-2 border-transparent  hover:border-purple-400">
+            <a href={item.href} className="font-semibold  leading-normal text-sm text-slate-300">
               {item.label}
             </a>
           </li>

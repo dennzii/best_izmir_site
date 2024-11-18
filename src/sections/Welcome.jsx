@@ -6,22 +6,21 @@ export const Welcome = () => {
   return (
     <section
     id="home"
-    className="w-full flex xl:flex-row flex-col justify-center min-h-full  max-w-full ">
-      <div className="relative xl:w-2/5 ml-20 flex flex-col justify-center items-start w-full max-xl:px-10 pt-28">
-        <p className="text-xl font-palanquin text-slate-gray">A Summer Course</p>
-        <h1 className="font-palanquin mt-8 text-4xl text-slate-950 font-bold">
-        <span>We are BEST İzmir</span>
-        <br/>
-        <span>Join Us!</span>
-        </h1>
-        <p className="text-xl font-palanquin text-slate-gray mb-10 mt-14">Discover your potential energy.</p>
-        <Counter  targetNumber={3000} duration={3000}></Counter>
-        <Button className="" label={"Apply Now!"}></Button>
-      </div>
-      <div className="relative flex-1 flex  justify-center items-center min-h-screen ">
-        <img src={izmir_foto}>
-        </img>
-      </div>
+    className=" bg-slate-600 relative min-h-full max-w-full ">
+        
+      
+    <div className="relative justify-center items-center min-w-fit min-h-screen">
+      <img src={izmir_foto} alt="Background" className="w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+
+    <div className="absolute inset-0 flex flex-col left-5 mt-48 ">
+      <h1 className="text-slate-200 text-8xl md:text-6xl font-bold z-10">Boyoz</h1>
+      <h1 className="text-slate-300 text-8xl md:text-6xl font-bold z-10">Gevrek</h1>
+      <h1 className="text-slate-400 text-8xl md:text-6xl font-bold z-10">Çay</h1>
+    </div>
+      
+
     </section>
   )
 }

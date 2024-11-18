@@ -4,7 +4,7 @@ import {annoucements} from "../constants/index"
 export  const Annoucements = () => {
   return (
     <section className="w-full flex flex-col justify-center min-h-80 max-w-full bg-blue-200">
-      <h1 className="text-4xl font-montserrat mt-10 font-bold ml-20">Annoucements</h1>
+      <h1 className="text-8xl font-montserrat mt-10 font-bold ml-5">Annoucements</h1>
       <br></br>
       <Carousel className="">
       {annoucements.map(item => (
