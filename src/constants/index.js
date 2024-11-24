@@ -4,7 +4,7 @@ export const navLinks = [
     { href: "/", label: "Home" },
     { href: "/events", label: "Events" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact Us" },
 ];
 
 

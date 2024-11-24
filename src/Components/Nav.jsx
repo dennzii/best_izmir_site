@@ -19,7 +19,7 @@ export const Nav = () => {
   return (
     
    <header className={`fixed w-full padding-x z-50 transition-transform duration-800 ease-in-out ${
-   scrolled ? `bg-black shadow-lg ` : `bg-transparent`
+   scrolled ? "bg-gradient-to-b from-black to-transparent" : `bg-transparent`
    }`}
    >
    

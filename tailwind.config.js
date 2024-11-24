@@ -33,7 +33,7 @@ export default {
         "red-morumsu" :"#b43358",
         "red-acik" : "#c76682",
         "red-beyazimsi" :"#d999ab",
-
+        "günbatimi" : "#CD7F8C"
         
       },
       boxShadow: {
