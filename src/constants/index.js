@@ -3,7 +3,7 @@ import { Gallery } from "../sections/Gallery";
 export const navLinks = [
     { href: "/", label: "Home" },
     { href: "/events", label: "Events" },
-    { href: "/gallery", label: "Gallery" },
+    { href: "/team", label: "Team" },
     { href: "/contact", label: "Contact Us" },
 ];
 
