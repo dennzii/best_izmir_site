@@ -45,8 +45,27 @@ export default {
       },
       screens: {
         "wide": "1440px"
-      }
-    },
+      },
+      animation:{
+        'slide-left': 'slideInFromLeft 1s ease-out forwards',
+        'slide-right': 'slideInFromRight 1s ease-out forwards',
+        'fade': 'fadeIn 1s ease-out forwards',
+      },
+      keyframes: {
+        slideInFromLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        slideInFromRight: {
+          '0%': { transform: 'translateX(100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+    }
   },
   plugins: [],
 }
