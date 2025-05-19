@@ -11,7 +11,7 @@ export const Welcome = () => {
       
     <div className="relative justify-center items-center min-w-fit min-h-screen">
       <img src={izmir_foto} alt="Background" className="w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+    <div className="absolute inset-0 bg-black bg-opacity-10"></div>
     </div>
 
     <div className="absolute inset-0 flex flex-col left-5 mt-48 ">
