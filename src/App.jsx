@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 function App() {
     return (
         <div>
-        <Routes>
-            <Route path='/' element={<HomePage/>}/>
-            <Route path='/team' element={<Team/>}/>
-            
-        </Routes>
-    </div>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/team' element={<Team />} />
+                <Route path='/events' element={<Team />} />
+            </Routes>
+        </div>
     )
 
 
