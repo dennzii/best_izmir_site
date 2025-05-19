@@ -1,8 +1,6 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
 import Team from "./pages/Team"
-import Events from "./pages/Event"
-
 
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
