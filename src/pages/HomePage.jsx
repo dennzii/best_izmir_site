@@ -1,8 +1,5 @@
 
-import { Annoucements } from "../sections/Annoucements"
-import { Events } from "../sections/Events"
 import { Footer } from "../sections/Footer"
-import { Gallery } from "../sections/Gallery"
 import { Welcome } from "../sections/Welcome";
 import { ByNumbers } from "../sections/ByNumbers"
 import { Nav } from "../Components/Nav"
