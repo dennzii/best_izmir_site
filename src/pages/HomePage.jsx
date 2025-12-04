@@ -14,8 +14,6 @@ function HomePage() {
     return(
     <main className="relative">
         
-       
-        
         <section className="">
             <Nav/>
             </section>
@@ -24,9 +22,6 @@ function HomePage() {
             <Welcome/>
         </section>
 
-        
-       
-        
         <AboutUs></AboutUs>
         
         
@@ -36,9 +31,6 @@ function HomePage() {
         <section className=" h-48 bg-black">
             <Footer/>
         </section>
-
-        
-
     </main>
   )
 }

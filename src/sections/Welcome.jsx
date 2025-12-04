@@ -1,43 +1,8 @@
-import { useEffect, useRef } from "react";
-import { Button } from "../Components/Button";
+
 import izmir_foto from "../assets/izmir_foto.png";
 
 export const Welcome = () => {
-  const scrolled = useRef(false);
 
-  // 👇 Yavaş scroll fonksiyonu (1.5 saniye boyunca smooth kayar)
-  function slowScrollTo(to, duration = 1000) {
-    const start = window.scrollY;
-    const distance = to - start;
-    let startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      window.scrollTo(0, start + distance * easeInOutQuad(progress));
-      if (progress < 1) requestAnimationFrame(animation);
-    }
-
-    function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    requestAnimationFrame(animation);
-  }
-
-  // 👇 İlk scroll hareketinde otomatik kaydır
-  useEffect(() => {
-    const handleWheel = () => {
-      if (!scrolled.current) {
-        scrolled.current = true;
-        slowScrollTo(window.innerHeight, 1500); // 1.5 saniyede aşağı kay
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: true });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
   return (
     <section
       id="home"
