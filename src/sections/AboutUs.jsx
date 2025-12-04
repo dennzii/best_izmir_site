@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import aboutFoto1 from "../assets/HomePage/about_foto4.png";
+import aboutFoto2 from "../assets/HomePage/about_foto2.png";
+import aboutFoto3 from "../assets/HomePage/about_foto1.png";
 
 export const AboutUs = () => {
   const sectionVariants = {
@@ -12,58 +15,90 @@ export const AboutUs = () => {
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.2 });
 
+  const content = [
+    {
+      ref: ref1,
+      inView: inView1,
+      title: "Hakkımızda", // Başlığı Türkçe yaptım, istersen değiştirebilirsin
+      text: "Açıkçası rakıyı hiç sevmiyorum çünkü bana hem tadı hem de kokusu fazla yoğun ve ağır geliyor. Ama dost meclisinde bulunmak paha biçilemez.",
+      imgSrc: aboutFoto1
+    }, 
+    {
+      ref: ref2,
+      inView: inView2,
+      // title: "Vizyonumuz", // İstersen buraya da başlık ekleyebilirsin
+      text: "Gözlüklü Shrek'e benzemek, hayatı biraz daha eğlenceli ve umursamaz bir perspektiften görmek demek olabilir. Biz de olaylara böyle bakıyoruz.",
+      imgSrc: aboutFoto2
+    }, 
+    {
+      ref: ref3,
+      inView: inView3,
+      // title: "Ekibimiz",
+      text: "Aslan ve Yengeç burçlarının tam arasında doğmuş olmak, iki farklı dünyanın özelliklerini bir arada taşımak gibi bir şey. Hem lider hem duygusal.",
+      imgSrc: aboutFoto3
+    }
+  ];
+
   return (
-    <section className="bg-indigo-100 min-h-screen flex flex-col items-center justify-center py-6 sm:py-10">
-      {[{
-        ref: ref1,
-        inView: inView1,
-        title: "About Me (Uzeyir)",
-        text: "Açıkçası rakıyı hiç sevmiyorum çünkü bana hem tadı hem de kokusu fazla yoğun ve ağır geliyor...",
-        imgSrc: "https://www.fokaibalikrestaurant.com/tema/genel/uploads/urunler/rak%C4%B11.webp"
-      }, {
-        ref: ref2,
-        inView: inView2,
-        text: "Gözlüklü Shrek'e benzemek, hayatı biraz daha eğlenceli ve umursamaz bir perspektiften görmek demek olabilir...",
-        imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBHCdETeYXEziCeObOizVUpx0auv9lVr4TvQ&s"
-      }, {
-        ref: ref3,
-        inView: inView3,
-        text: "Aslan ve Yengeç burçlarının tam arasında doğmuş olmak, iki farklı dünyanın özelliklerini bir arada taşımak gibi bir şey...",
-        imgSrc: "https://t4.ftcdn.net/jpg/05/08/82/03/360_F_508820353_8p3eN8bBWoAQoxj4susKlzL6979VEFuf.jpg"
-      }].map(({ ref, inView, title, text, imgSrc }, index) => (
+    // bg-transparent önemli, arkadaki yıldızları kapatmamalı
+    <section className="bg-transparent w-full flex flex-col items-center justify-center py-20 gap-10">
+      
+      {content.map(({ ref, inView, title, text, imgSrc }, index) => (
         <motion.div
           key={index}
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="container mx-auto px-4 sm:px-8 flex flex-col sm:flex-col md:flex-row items-center mb-6 sm:mb-10"
+          className="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center gap-12 mb-20"
         >
           {index % 2 === 0 ? (
+            /* --- SOL YAZI - SAĞ RESİM --- */
             <>
-              <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start p-4 sm:p-6 h-full">
-                {title && <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-indigo-900">{title}</h2>}
-                <p className="text-base sm:text-lg text-gray-700 text-center md:text-left">{text}</p>
+              <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left">
+                
+                {/* Başlık Varsa Göster */}
+                {title && (
+                  <div className="mb-6">
+                    <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300 drop-shadow-lg mb-2">
+                      {title}
+                    </h2>
+                    <div className="h-1 w-24 bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
+                  </div>
+                )}
+                
+                {/* Metin */}
+                <p className="text-lg md:text-xl text-slate-200 font-light leading-relaxed drop-shadow-md">
+                  {text}
+                </p>
               </div>
-              <div className="md:w-1/2 w-full flex justify-center p-4 sm:p-6 h-full">
+
+              {/* Resim */}
+              <div className="md:w-1/2 w-full flex justify-center">
                 <img
-                  src={imgSrc}
                   alt="About Us"
-                  className="w-full h-auto max-w-full sm:max-w-md rounded-lg shadow-lg object-cover"
+                  className="w-full max-w-md h-auto rounded-3x hover:scale-105 transition-transform duration-500 object-cover"
+                  src={imgSrc}
                 />
               </div>
             </>
           ) : (
+            /* --- SOL RESİM - SAĞ YAZI --- */
             <>
-              <div className="md:w-1/2 w-full flex justify-center p-4 sm:p-6 h-full">
+              {/* Resim (Mobilde üstte görünmesi için order kullanabiliriz ama flex-col default sıralar) */}
+              <div className="md:w-1/2 w-full flex justify-center order-last md:order-first">
                 <img
                   src={imgSrc}
                   alt="About Us"
-                  className="w-full h-auto max-w-full sm:max-w-md rounded-lg shadow-lg object-cover"
+                  className="w-full max-w-md h-auto rounded-3xl  hover:scale-105 transition-transform duration-500 object-cover"
                 />
               </div>
-              <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start p-4 sm:p-6 h-full">
-                <p className="text-base sm:text-lg text-gray-700 text-center md:text-left">{text}</p>
+
+              <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left">
+                 {/* Eğer 2. elemanın da başlığı olsaydı buraya eklerdik */}
+                <p className="text-lg md:text-xl text-slate-200 font-light leading-relaxed drop-shadow-md">
+                  {text}
+                </p>
               </div>
             </>
           )}

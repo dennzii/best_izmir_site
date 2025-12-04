@@ -1,24 +1,40 @@
+import React from 'react';
 import DisplayIcons from "../Components/DisplayIcons"
-import AngryBird from "../assets/angry_bird.png"
+import BestBird from "../assets/best_bird.png";
 
 export const Footer = () => {
-
-  
-
   return (
-    <section>
-    <div className="py-2 px-2 ">
-      <img src={AngryBird} className="w-36 h-36 "></img>
-    </div>
-     
-      <p className="absolute bottom-0 left-0 ml-5
-        mb-5 font-montserrat text-slate-gray">
-        All rights reserved 2008 BEST İzmir.
-      </p>
-      <div className="">
-          <DisplayIcons className=""></DisplayIcons>
-      </div>
+    // DEĞİŞİKLİK BURADA: 
+    // 'bg-gradient-to-t from-black via-black/80 to-transparent' ekledik.
+    // Bu, aşağıdan yukarıya doğru siyahtan şeffafa giden bir geçiş sağlar.
+<footer className="w-full px-6 py-8 text-white relative z-10 bg-gradient-to-t from-black via-black/80 to-transparent">      
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        {/* 1. LOGO ALANI (SOL) */}
+        <div className="flex-shrink-0">
+          <img 
+            src={BestBird} 
+            alt="Best Bird Logo" 
+            className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+          />
+        </div>
       
-    </section>
+        {/* 2. İKONLAR (SAĞ) */}
+        <div className="flex items-center">
+            <div className="scale-110">
+               <DisplayIcons />
+            </div>
+        </div>
+
+      </div>
+
+      {/* 3. TELİF HAKKI YAZISI (EN ALT) */}
+      <div className="w-full text-center mt-8 border-t border-white/10 pt-4">
+        <p className="font-montserrat text-sm text-gray-400">
+          All rights reserved © {new Date().getFullYear()} BEST İzmir.
+        </p>
+      </div>
+
+    </footer>
   )
 }

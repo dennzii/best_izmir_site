@@ -1,34 +1,89 @@
-
+import React from "react";
+import { motion } from "framer-motion"; // Animasyon için (AboutUs'ta kullanmıştık)
 
 export const ByNumbers = () => {
+  
+  // Verileri bir dizi (array) olarak tutalım, yönetmesi kolay olsun
+  const stats = [
+    {
+      id: 1,
+      number: "1M+",
+      label: "Influenced Students",
+      desc: "Avrupa genelinde ulaşılan öğrenci sayısı.",
+      color: "from-blue-400 to-cyan-300" // Her kutuya özel renk gradyanı
+    },
+    {
+      id: 2,
+      number: "3,300+",
+      label: "Besties",
+      desc: "Aktif ve tutkulu üye sayımız.",
+      color: "from-purple-400 to-pink-400"
+    },
+    {
+      id: 3,
+      number: "86+",
+      label: "Universities",
+      desc: "30 farklı ülkede teknik üniversite ağı.",
+      color: "from-amber-400 to-orange-500"
+    }
+  ];
+
   return (
-    <section>
-            <div class="bg-red-bg text-white py-10">
+    <section className="w-full py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* --- BAŞLIK --- */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-20 text-center"
+        >
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-slate-400 drop-shadow-lg">
+            BEST by Numbers
+          </h2>
+          <div className="w-24 h-1 bg-purple-500 mx-auto mt-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.8)]"></div>
+        </motion.div>
 
-        <div class=" mb-56 ">
-            <h2 class="text-8xl font-bold ml-5 mt-5">the BEST by Numbers</h2>
+        {/* --- KUTULAR (GRID) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }} // Sırayla gelsinler
+              viewport={{ once: true }}
+              
+              // GLASSMORPHISM KARTI
+              className="group relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            >
+              
+              {/* Arkadaki parlama efekti (Hover'da çıkar) */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}></div>
+
+              {/* Rakam */}
+              <h3 className={`text-6xl md:text-7xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-br ${stat.color} drop-shadow-lg`}>
+                {stat.number}
+              </h3>
+
+              {/* Başlık */}
+              <p className="text-2xl font-bold text-white mb-2 tracking-wide">
+                {stat.label}
+              </p>
+
+              {/* Açıklama (İstersen kaldırabilirsin) */}
+              <p className="text-sm text-gray-400 font-light max-w-[200px]">
+                {stat.desc}
+              </p>
+              
+            </motion.div>
+          ))}
+
         </div>
-
-        <div class="grid grid-cols-1  sm:grid-cols-3  text-center">
-            
-            <div class="bg-red-morumsu py-8 ml-5 h-56 relative">
-            <p class="text-4xl font-bold absolute top-4 left-4">1,000,000+</p>
-            <p class="mt-2 text-4xl text-slate-300 absolute bottom-4 left-4">Influenced Student</p>
-            </div>
-            
-            <div class="bg-red-acik py-8 relative">
-            <p class="text-4xl font-bold absolute top-4 left-4">3,000+</p>
-            <p class="mt-2 text-4xl text-slate-300 absolute bottom-4 left-4">Besties</p>
-            </div>
-            
-            <div class="bg-red-beyazimsi py-8 mr-5 relative">
-            <p class="text-4xl font-bold absolute top-4 left-4">86+</p>
-            <p class="mt-2 text-4xl text-slate-300 absolute bottom-4 left-4">Universities</p>
-            </div>
-        </div>
-    </div>
-
-
+      </div>
     </section>
-  )
-}
+  );
+};
