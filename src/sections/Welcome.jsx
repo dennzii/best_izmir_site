@@ -17,10 +17,10 @@ export const Welcome = () => {
         <div className="absolute inset-0 bg-black bg-opacity-10"></div>
       </div>
 
-      <div className="absolute inset-0 flex flex-col left-5 mt-48">
-        <h1 className="text-slate-300 text-8xl md:text-6xl font-bold z-10">Boyoz</h1>
-        <h1 className="text-slate-400 text-8xl md:text-6xl font-bold z-10">Gevrek</h1>
-        <h1 className="text-slate-500 text-8xl md:text-6xl font-bold z-10">Çay</h1>
+      <div className="absolute inset-0 flex flex-col justify-center items-start pl-5 md:mt-0">
+        <h1 className="text-slate-300 text-6xl md:text-8xl font-bold z-10">Boyoz</h1>
+        <h1 className="text-slate-400 text-6xl md:text-8xl font-bold z-10">Gevrek</h1>
+        <h1 className="text-slate-500 text-6xl md:text-8xl font-bold z-10">Çay</h1>
       </div>
     </section>
   );

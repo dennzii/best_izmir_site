@@ -1,16 +1,31 @@
 // Team.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav } from "../Components/Nav";
-import { Welcome } from "../sections/Welcome";
 import { FlipCard } from '../Components/FlipCard';
+import Stars from '../Components/Stars';
 import { teamMembersData } from '../data/TeamMembers';
 
 function Team() {
   const teamMembers = teamMembersData;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <main className='relative bg-indigo-100 min-h-screen'>
-      
+    <main className='relative min-h-screen' style={{
+      background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed' // Sayfa kaydığında arka plan sabit kalsın
+    }}>
+      <Stars />
+
       {/* Scrollbar gizleme stilleri (Sadece mobil görünümde estetik için) */}
       <style>{`
         .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -32,21 +47,18 @@ function Team() {
         }
       `}</style>
 
-      <section>
-        <Nav />
+      <section className="relative z-50">
+        <Nav isScrolled={isScrolled} />
       </section>
 
-      <section className="xl:padding-l wide:padding-r">
-        <Welcome />
-      </section>
 
-      <section className="w-full py-10">
+      <section className="relative z-10 w-full py-10">
         {/* --- YENİ EKLENEN BAŞLIK BÖLÜMÜ --- */}
         <div className="text-center mb-10 px-4">
-          <h2 className="text-4xl md:text-5xl font-black text-indigo-950 tracking-tight mb-2">
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-2">
             Yönetim
           </h2>
-          <p className="text-sm md:text-lg font-bold text-indigo-500 uppercase tracking-[0.2em]">
+          <p className="text-sm md:text-lg font-bold text-indigo-300 uppercase tracking-[0.2em]">
             Board
           </p>
           {/* Dekoratif çizgi (Opsiyonel) */}
@@ -69,12 +81,12 @@ function Team() {
             md:justify-center     /* Ortala */
             md:px-4               /* Masaüstü kenar boşluğu */
         `}>
-          
+
           {teamMembers.map((member) => (
-            
+
             /* --- KART WRAPPER --- */
-            <div 
-              key={member.id} 
+            <div
+              key={member.id}
               className={`
                 relative h-[300px] md:h-[300px] team-card
 
@@ -115,10 +127,10 @@ function Team() {
 
 
       </section>
-            <section className="w-full py-10">
+      <section className="relative z-10 w-full py-10">
         {/* --- YENİ EKLENEN BAŞLIK BÖLÜMÜ --- */}
         <div className="text-center mb-10 px-4">
-          <p className="text-sm md:text-lg font-bold text-indigo-500 uppercase tracking-[0.2em]">
+          <p className="text-sm md:text-lg font-bold text-indigo-300 uppercase tracking-[0.2em]">
             NonBoard
           </p>
           <div className="w-24 h-1 bg-indigo-400 mx-auto mt-4 rounded-full opacity-60 text"></div>
@@ -140,12 +152,12 @@ function Team() {
             md:justify-center     /* Ortala */
             md:px-4               /* Masaüstü kenar boşluğu */
         `}>
-          
+
           {teamMembers.map((member) => (
-            
+
             /* --- KART WRAPPER --- */
-            <div 
-              key={member.id} 
+            <div
+              key={member.id}
               className={`
                 relative h-[300px] md:h-[300px] team-card
 
