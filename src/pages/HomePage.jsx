@@ -10,6 +10,8 @@ import { Welcome } from "../sections/Welcome";
 import { ByNumbers } from "../sections/ByNumbers";
 import { Nav } from "../Components/Nav";
 import { AboutUs } from "../sections/AboutUs";
+import { HomeEvents } from "../sections/HomeEvents";
+import { HomeContact } from "../sections/HomeContact";
 
 // GÖRSEL URL HELPER
 const url = (name, wrap = false) =>
@@ -62,12 +64,22 @@ function HomePage() {
           </div>
 
           {/* ABOUT US */}
-          <div className="w-full px-4 py-10">
+          <div className="w-full px-4 py-4">
             <AboutUs />
           </div>
 
+          {/* EVENTS */}
+          <div className="w-full px-4 py-4">
+            <HomeEvents />
+          </div>
+
+          {/* CONTACT */}
+          <div className="w-full px-4 py-4">
+            <HomeContact />
+          </div>
+
           {/* HARİTA & BY NUMBERS (Üst üste bindirme) */}
-          <div className="relative w-full flex flex-col items-center justify-center py-10">
+          <div className="relative w-full flex flex-col items-center justify-center py-4">
 
             {/* HARİTA (Arkada) */}
             <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
@@ -82,7 +94,7 @@ function HomePage() {
           </div>
 
           {/* FOOTER */}
-          <div className="w-full mt-10">
+          <div className="w-full mt-4">
             <Footer />
           </div>
 
@@ -103,7 +115,7 @@ function HomePage() {
         </div>
       </div>
       {/* 2. PARALLAX KAPSIYICI */}
-      <Parallax ref={parallax} pages={4}>
+      <Parallax ref={parallax} pages={4.0}>
 
         {/* --- KATMAN GRUBU A: ARKA PLANLAR --- */}
 
@@ -127,16 +139,16 @@ function HomePage() {
           />
         </ParallaxLayer>
         {/* Bulut - AboutUs civarında */}
-        <ParallaxLayer offset={1.5} speed={0.8} style={{ opacity: 0.3, pointerEvents: 'none', zIndex: 0 }}>
+        <ParallaxLayer offset={1.3} speed={0.8} style={{ opacity: 0.3, pointerEvents: 'none', zIndex: 0 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} alt="cloud" />
         </ParallaxLayer>
 
         {/* --- KATMAN GRUBU B: SÜSLEMELER --- */}
 
         {/* DÜZELTME BURADA: BEST MAP (Harita) */}
-        {/* ByNumbers 2.7'de başlıyor. Haritayı 2.6'ya koyduk ki tam arkasına denk gelsin. */}
+        {/* ByNumbers arkasında durması lazım. */}
         <ParallaxLayer
-          offset={2.7}
+          offset={2.8}
           speed={0.2} // İçerikten daha yavaş hareket etsin (Derinlik hissi)
           style={{
             display: 'flex',
@@ -168,19 +180,43 @@ function HomePage() {
 
         {/* 2. ABOUT US */}
         <ParallaxLayer
-          offset={1}
+          offset={0.9}
           speed={0.2}
-          factor={1.7}
+          factor={1.2}
           style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
         >
-          <div className="w-full pointer-events-auto px-4 mt-32">
+          <div className="w-full pointer-events-auto px-4 mt-16">
             <AboutUs />
           </div>
         </ParallaxLayer>
 
-        {/* 3. BY NUMBERS */}
+        {/* 3. EVENTS */}
         <ParallaxLayer
-          offset={2.7}
+          offset={1.5}
+          speed={0.2}
+          factor={1.2}
+          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
+        >
+          <div className="w-full pointer-events-auto px-4 mt-16">
+            <HomeEvents />
+          </div>
+        </ParallaxLayer>
+
+        {/* 4. CONTACT */}
+        <ParallaxLayer
+          offset={2.1}
+          speed={0.2}
+          factor={1.2}
+          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
+        >
+          <div className="w-full pointer-events-auto px-4 mt-16">
+            <HomeContact />
+          </div>
+        </ParallaxLayer>
+
+        {/* 5. BY NUMBERS */}
+        <ParallaxLayer
+          offset={2.8}
           speed={0.5}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
         >
@@ -189,7 +225,7 @@ function HomePage() {
           </div>
         </ParallaxLayer>
 
-        {/* 4. FOOTER */}
+        {/* 6. FOOTER */}
         <ParallaxLayer
           offset={3.6}
           speed={0.5}

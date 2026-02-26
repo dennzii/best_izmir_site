@@ -5,8 +5,10 @@ import { Footer } from "../sections/Footer";
 import Stars from '../Components/Stars';
 import { eventsData } from '../data/EventsData';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 function Events() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,7 +21,7 @@ function Events() {
   }, []);
 
   return (
-    <main className='relative min-h-screen font-sans selection:bg-indigo-500 selection:text-white' style={{
+    <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
       background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed'
@@ -31,7 +33,7 @@ function Events() {
         <Nav isScrolled={isScrolled} />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 flex flex-col items-center">
+      <div className="relative z-10 container mx-auto flex-grow px-4 pt-32 md:pt-40 pb-0 flex flex-col items-center">
 
         {/* --- HEADER --- */}
         <motion.div
@@ -41,10 +43,10 @@ function Events() {
           className="text-center mb-16 md:mb-24"
         >
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            BEST EVENTS
+            {t('eventsPage.title')}
           </h1>
           <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
-            Unutulmaz anlar, birlikte yaşanan deneyimler ve geleceğe bıraktığımız izler.
+            {t('eventsPage.subtitle')}
           </p>
           <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
         </motion.div>
@@ -61,12 +63,11 @@ function Events() {
           ))}
 
         </div>
+      </div>
 
-        {/* --- FOOTER (Page Specific Margin) --- */}
-        <div className="w-full mt-24">
-          <Footer />
-        </div>
-
+      {/* --- FOOTER (Page Specific Margin) --- */}
+      <div className="w-full mt-auto pt-24 z-10">
+        <Footer />
       </div>
     </main>
   );
@@ -74,6 +75,7 @@ function Events() {
 
 // Alt Bileşen: Timeline Item
 function TimelineItem({ event, index }) {
+  const { t } = useTranslation();
   const isEven = index % 2 === 0;
 
   return (
@@ -124,10 +126,10 @@ function TimelineItem({ event, index }) {
           {/* Metin Alanı */}
           <div className="p-6 md:p-8">
             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">
-              {event.title}
+              {t(event.titleKey)}
             </h3>
             <p className="text-gray-300 font-light leading-relaxed text-sm md:text-base">
-              {event.description}
+              {t(event.descKey)}
             </p>
           </div>
 

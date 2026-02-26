@@ -2,17 +2,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { themes } from '../data/TeamMembers';
+import { useTranslation } from 'react-i18next';
 
 export const FlipCard = ({
   foto,
   isim,
-  gorev,
-  yazi,
-  reyting = 85,
-  stats,
+  gorevKey,
+  yaziKey,
   variant = 'gold',
   ikon
 }) => {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const theme = themes[variant] || themes.gold;
 
@@ -47,14 +47,11 @@ export const FlipCard = ({
             transform: 'translateZ(0)',
           }}
         >
-          {/* Header Bölümü (Görev ve Reyting) */}
+          {/* Header Bölümü (Görev) */}
           <div className="w-full flex justify-between items-start mb-2 flex-shrink-0">
             <div className="flex flex-col">
               <span className={`text-[10px] font-semibold uppercase tracking-wider ${theme.accentColor} opacity-80`}>
-                {gorev}
-              </span>
-              <span className={`text-2xl font-black ${theme.textColor} mt-0.5`}>
-                {reyting}
+                {t(gorevKey)}
               </span>
             </div>
           </div>
@@ -78,22 +75,6 @@ export const FlipCard = ({
               {isim}
             </h2>
           </div>
-
-          {/* İstatistikler
-          {stats && stats.length > 0 && (
-            <div className="w-full flex items-center justify-around gap-2 pt-2 border-t border-white/30 flex-shrink-0">
-              {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <span className={`text-sm font-bold ${theme.textColor}`}>
-                    {stat.value}
-                  </span>
-                  <span className="text-[9px] opacity-70 mt-0.5">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )} */}
         </motion.div>
 
         {/* --- ARKA YÜZ (DÜZENLENDİ) --- */}
@@ -119,7 +100,7 @@ export const FlipCard = ({
           */}
           <div className="flex-1 flex items-center justify-center w-full overflow-hidden">
             <p className="text-sm md:text-base leading-relaxed font-light px-1 max-h-full overflow-y-auto scrollbar-hide">
-              {yazi}
+              {t(yaziKey)}
             </p>
           </div>
 

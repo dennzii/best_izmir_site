@@ -1,0 +1,94 @@
+{
+    "events": {
+        "title1": "beTAMAM",
+        "desc1": "beTAMAM is an anniversary event celebrating BEST Izmir’s achievement of full membership at the international level. During the event, we cut a cake, our alumni members share their experiences, and we introduce our community to new members through enjoyable and friendly conversations.",
+        "title2": "MW Izmir",
+        "desc2": "Motivational Weekend (MW) is a two-day training and motivation event where we enhance our skills while having fun and strengthen the bond between BESTies. Throughout the event, our trainers deliver workshops and trainings on presentation skills, time management, sponsorship, leadership, and many other topics. These trainings help participants enhance their careers while truly experiencing the spirit of BEST. With various BEST games and activities, MW offers a friendly, energetic, and highly motivating weekend.",
+        "title3": "beINCI",
+        "desc3": "beINCI is our annual national event where we come together with other BEST groups across Türkiye. In addition to trainings focused on team management, project management, and personal development, the event aims to create networking opportunities and strengthen our bonds with other Turkish LBGs.",
+        "title4": "BEST Courses",
+        "desc4": "BEST Courses are part of the international BEST tradition, where we engage in academic and cultural exchange with students from across Europe. Alongside educational sessions, the event offers cultural evenings, city tours, and the opportunity to build unforgettable friendships."
+    },
+    "eventsPage": {
+        "title": "BEST EVENTS",
+        "subtitle": "Unforgettable moments, shared experiences, and the marks we leave for the future."
+    },
+    "teamMembers": {
+        "baskanRole": "President",
+        "baskanQuote": "We are here to bring BEST Izmir to the best places.",
+        "vppRole": "VPP",
+        "vppQuote": "External relations and partnerships are our business.",
+        "vpisRole": "VPIS",
+        "vpisQuote": "We are always improving our internal operations and systems.",
+        "saymanRole": "Treasurer",
+        "saymanQuote": "Our budget is always in safe hands.",
+        "sekreterRole": "Secretary",
+        "sekreterQuote": "Every meeting and decision is recorded.",
+        "itCoordRole": "IT Coord",
+        "itCoordQuote": "Our servers and codes never get tired.",
+        "prCoordRole": "PR Coordie",
+        "prCoordQuote": "We tell our story in the best possible way.",
+        "designCoordRole": "Design Coordie",
+        "designCoordQuote": "Our look and brand are everything.",
+        "aktiviteCoordRole": "Activity Coordie",
+        "aktiviteCoordQuote": "The person responsible for our fun and bonding activities.",
+        "frCoordRole": "FR Coordie",
+        "frCoordQuote": "I am responsible for corporate relations and fundraising."
+    },
+    "teamPage": {
+        "title": "MEET THE TEAM",
+        "subtitle": "The dynamic team carrying BEST Izmir to the future.",
+        "board": "Board of Management",
+        "members": "Coordinators"
+    },
+    "byNumbers": {
+        "title": "BEST by Numbers",
+        "influencedStudents": "Influenced Students",
+        "influencedStudentsDesc": "Number of students reached across Europe.",
+        "besties": "Besties",
+        "bestiesDesc": "Our active and passionate members.",
+        "universities": "Universities",
+        "universitiesDesc": "Technical university network in 30 different countries."
+    },
+    "aboutUs": {
+        "title1": "ABOUT US - BEST IZMIR",
+        "text1": "BEST Izmir is an international student organization that has been active for over 250 members since 2008. Its mission is to empower students by fostering diversity and creating opportunities for their personal and academic development.\n\nBEST Izmir offers its members countless opportunities, such as traveling to new destinations, participating in horizon-expanding events, and gaining hands-on experience by taking active roles within teams and departments, while also providing a platform to connect with people from all around the world, develop skills, and take part in unique experiences that support both personal and professional growth.",
+        "title2": "What is BEST?",
+        "text2": "BEST, Board of European Students of Technology is a constantly growing non-profit and non-political organisation. Since 1989 BEST provides communication, co-operation and exchange possibilities for students all over Europe.\n81 Local BEST Groups (LBGs) in 29 countries are creating a growing, well organised, powerful, young and innovative student network.\n\nBEST strives to help European students of technology to become more internationally minded, by reaching a better understanding of European cultures and developing capacities to work on an international basis. Therefore BEST creates opportunities for the students to meet and learn from one another through academic and non-academic events and educational symposia. \"Learning makes the master\", but the final goal is a good working place, therefore BEST offers services like an international career centre to broaden the horizons for the choice on the job market.\nPriority is to offer high quality services for students all over Europe. Thus, BEST manages to bring all the partners in the \"student - company - university\" triangle closer.",
+        "title3": "Vision & Mission",
+        "text3": "Vision: Empowered Diversity\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.\n\nMission: Developing Students\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.",
+        "readMore": "Read More"
+    },
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "events": "Events",
+        "team": "Team",
+        "contact us": "Contact"
+    },
+    "welcome": {
+        "word1": "Boyoz",
+        "word2": "Gevrek",
+        "word3": "Tea"
+    },
+    "footer": {
+        "rights": "All rights reserved"
+    },
+    "contact": {
+        "title": "CONTACT US",
+        "subtitle": "We are here for your questions, projects, or just to say hello.",
+        "contactInfo": "Contact Information",
+        "addressTitle": "Address",
+        "addressContent": "Ege University Campus, Faculty of Engineering, Computer Eng. Dept., Bornova/Izmir",
+        "emailTitle": "Email",
+        "followUs": "Follow Us",
+        "sendMessage": "Send a Message",
+        "nameLabel": "Full Name",
+        "emailLabel": "Email Address",
+        "subjectLabel": "Subject",
+        "messageLabel": "Your Message",
+        "sendButton": "Send",
+        "sending": "Sending...",
+        "success": "Your message has been sent successfully!"
+    }
+}

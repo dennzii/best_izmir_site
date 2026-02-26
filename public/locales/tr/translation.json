@@ -1,0 +1,94 @@
+{
+    "events": {
+        "title1": "beTAMAM",
+        "desc1": "BEST İzmir’in uluslararası düzeyde tam üye oluşunu kutladığımız bir yıldönümü etkinliğidir. Etkinlikte pasta kesimi yapılır, mezunlarımız deneyimlerini paylaşır ve keyifli sohbetler eşliğinde yeni üyelerimize topluluğumuz tanıtılır.",
+        "title2": "MW İzmir",
+        "desc2": "Motivational Weekend, gelişirken eğlendiğimiz ve BESTie’ler arasındaki bağı güçlendiren iki günlük bir eğitim ve motivasyon etkinliğidir. Etkinlik boyunca eğitmenlerimiz tarafından sunum teknikleri, zaman yönetimi, sponsorluk, liderlik ve daha birçok alanda çalışmaları ve eğitimler verilir. Bu eğitimler, kariyerinizi güçlendirmenizi sağlarken aynı zamanda BEST ruhunu yakından hissetmemize yardımcı olur. Çeşitli BEST oyunları ve aktivitelerle samimi, enerjik ve motivasyon dolu bir hafta sonu etkinliğidir.",
+        "title3": "beINCI",
+        "desc3": "Türkiye’deki diğer BEST gruplarıyla bir araya geldiğimiz, her yıl düzenlenen ulusal etkinliğimizdir. Takım yönetimi, proje yönetimi ve kişisel gelişim odaklı eğitimlerin yanı sıra; diğer Türk LBG’leriyle network kurma, bağlarımızı güçlendirmeyi amaçlar.",
+        "title4": "BEST Kursları",
+        "desc4": "Avrupa’dan gelen öğrencilerle akademik ve kültürel paylaşım sağladığımız; eğitimlerin yanı sıra kültürel akşamlar, şehir gezileri ve unutulmaz arkadaşlıklar sunan, uluslararası BEST geleneğinin bir parçası olan bir etkinliktir."
+    },
+    "eventsPage": {
+        "title": "BEST ETKİNLİKLERİ",
+        "subtitle": "Unutulmaz anlar, birlikte yaşanan deneyimler ve geleceğe bıraktığımız izler."
+    },
+    "teamMembers": {
+        "baskanRole": "Başkan",
+        "baskanQuote": "BEST İzmir'i en iyi yerlere taşımak için buradayız.",
+        "vppRole": "VPP",
+        "vppQuote": "Dış ilişkiler ve partnerlikler bizim işimiz.",
+        "vpisRole": "VPIS",
+        "vpisQuote": "İç işleyişi ve sistemlerimizi her zaman geliştiriyoruz.",
+        "saymanRole": "Sayman",
+        "saymanQuote": "Bütçemiz her zaman sağlam ellerde.",
+        "sekreterRole": "Sekreter",
+        "sekreterQuote": "Her toplantının ve kararın bir kaydı var.",
+        "itCoordRole": "IT Coord",
+        "itCoordQuote": "Sunucularımız ve kodlarımız asla yorulmaz.",
+        "prCoordRole": "PR Coordie",
+        "prCoordQuote": "Hikayemizi en iyi şekilde anlatıyoruz.",
+        "designCoordRole": "Design Coordie",
+        "designCoordQuote": "Görünümümüz ve markamız her şeydir.",
+        "aktiviteCoordRole": "Aktivite Coordie",
+        "aktiviteCoordQuote": "Eğlence ve kaynaşma etkinliklerimizden sorumlu kişi.",
+        "frCoordRole": "FR Coordie",
+        "frCoordQuote": "Kurumsal ilişkiler ve fon yaratımından sorumluyum."
+    },
+    "teamPage": {
+        "title": "MEET THE TEAM",
+        "subtitle": "BEST İzmir'i geleceğe taşıyan dinamik kadromuz.",
+        "board": "Yönetim Kurulu",
+        "members": "Koordinatörler"
+    },
+    "byNumbers": {
+        "title": "Rakamlarla BEST",
+        "influencedStudents": "Ulaşılan Öğrenciler",
+        "influencedStudentsDesc": "Avrupa genelinde ulaşılan öğrenci sayısı.",
+        "besties": "Bestieler",
+        "bestiesDesc": "Aktif ve tutkulu üye sayımız.",
+        "universities": "Üniversiteler",
+        "universitiesDesc": "30 farklı ülkede teknik üniversite ağı."
+    },
+    "aboutUs": {
+        "title1": "HAKKIMIZDA - BEST İZMİR",
+        "text1": "2008 yılından bu yana 250’nin üzerinde üyesiyle faaliyet gösteren BEST İzmir, uluslararası bir öğrenci topluluğudur. Misyonu; çeşitliliği teşvik ederek öğrencileri güçlendirmek ve kişisel ve akademik gelişimlerine yönelik fırsatlar yaratmaktır.\n\nBEST İzmir’de, dünyanın dört bir yanından insanlarla bağlantı kurabilir, yetkinliklerinizi geliştirebilir ve sizi hem kişisel hem de profesyonel anlamda ileriye taşıyacak özgün deneyimlerin bir parçası olabilirsiniz.\n\nBEST İzmir, üyelerine yeni destinasyonlara seyahat etme, ufuklarını genişletecek etkinliklere katılma ve ekipler ile departmanlar içerisinde aktif rol alarak deneyim kazanma gibi sayısız fırsat sunar.",
+        "title2": "BEST Nedir?",
+        "text2": "BEST, 1989 yılından bu yana apolitik ve gönüllülük esaslı yapısı ile Avrupa genelindeki öğrencilere iletişim, işbirliği ve değişim olanakları sunmaktadır. 29 ülkede faaliyet gösteren 81 Yerel BEST Grubu (Local BEST Groups – LBG), büyüyen, iyi organize olmuş, güçlü, genç ve yenilikçi bir öğrenci ağı oluşturmaktadır.\n\nBEST, Avrupa’daki teknoloji öğrencilerinin Avrupa kültürlerini daha iyi anlayarak uluslararası bir bakış açısı kazanmalarını ve uluslararası düzeyde çalışma yetkinliklerini geliştirmelerini hedefler. Bu doğrultuda, akademik ve akademik olmayan etkinlikler ile eğitim sempozyumları aracılığıyla öğrencilerin bir araya gelmelerini ve birbirlerinden öğrenmelerini sağlayan fırsatlar yaratır. “Öğrenci – şirket – üniversite” üçgenindeki tüm paydaşları birbirine daha da yakınlaştırmayı amaçlar.",
+        "title3": "Vizyon ve Misyon",
+        "text3": "Vizyon: Güçlendirilmiş Çeşitlilik\nİnsanların farklı kültürleri ve toplumları anladığı ve bunlara saygı duyduğu bir dünya oluşturmak. Güçlendirilmiş çeşitlilik ortamı, bireylerin tüm potansiyellerini ortaya koymalarını ve sorumluluk bilinciyle hareket etmelerini destekler.\n\nMisyon: Öğrencileri Geliştirmek\nBEST, öğrencilerin uluslararası bir düşünce biçimine erişmesine, yeni kültürler ve toplumlar hakkında daha derin bir anlayış geliştirmelerine yardımcı olur. BEST, öğrencilerin kişisel gelişimlerine yönelik fırsatlar yaratır ve onların potansiyellerini en üst düzeye çıkarmalarını destekler.",
+        "readMore": "Daha Fazlasını Gör"
+    },
+    "navbar": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımızda",
+        "events": "Etkinlikler",
+        "team": "Ekibimiz",
+        "contact us": "İletişim"
+    },
+    "welcome": {
+        "word1": "Boyoz",
+        "word2": "Gevrek",
+        "word3": "Çay"
+    },
+    "footer": {
+        "rights": "Tüm hakları saklıdır"
+    },
+    "contact": {
+        "title": "BİZE ULAŞIN",
+        "subtitle": "Sorularınız, projeleriniz veya sadece bir merhaba demek için buradayız.",
+        "contactInfo": "İletişim Bilgileri",
+        "addressTitle": "Adres",
+        "addressContent": "Ege Üniversitesi Kampüsü, Mühendislik Fakültesi, Bilgisayar Müh. Bölümü, Bornova/İzmir",
+        "emailTitle": "E-posta",
+        "followUs": "Bizi Takip Edin",
+        "sendMessage": "Mesaj Gönderin",
+        "nameLabel": "Adınız Soyadınız",
+        "emailLabel": "E-posta Adresiniz",
+        "subjectLabel": "Konu",
+        "messageLabel": "Mesajınız",
+        "sendButton": "Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesajınız başarıyla gönderildi!"
+    }
+}

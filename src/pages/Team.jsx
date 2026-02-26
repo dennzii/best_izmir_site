@@ -5,11 +5,12 @@ import { Nav } from "../Components/Nav";
 import { Footer } from "../sections/Footer";
 import { FlipCard } from '../Components/FlipCard';
 import Stars from '../Components/Stars';
-import { teamMembersData } from '../data/TeamMembers';
+import { boardMembersData, coordinatorsData } from '../data/TeamMembers';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 function Team() {
-  const teamMembers = teamMembersData;
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ function Team() {
   };
 
   return (
-    <main className='relative min-h-screen font-sans selection:bg-indigo-500 selection:text-white' style={{
+    <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
       background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed'
@@ -71,7 +72,7 @@ function Team() {
       </section>
 
 
-      <div className="relative z-10 w-full py-24 md:py-32 flex flex-col items-center">
+      <div className="relative z-10 w-full flex-grow pt-32 md:pt-40 pb-0 flex flex-col items-center">
 
         {/* --- PAGE HEADER --- */}
         <motion.div
@@ -81,19 +82,19 @@ function Team() {
           className="text-center mb-16 md:mb-20 px-4"
         >
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            MEET THE TEAM
+            {t('teamPage.title')}
           </h1>
           <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
-            BEST İzmir'i geleceğe taşıyan dinamik kadromuz.
+            {t('teamPage.subtitle')}
           </p>
           <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
         </motion.div>
 
 
         {/* --- BOARD SECTION --- */}
-        <div className="w-full max-w-7xl px-4 mb-20">
+        <div className="w-full max-w-[1536px] px-4 mb-20">
           <div className="flex items-center space-x-4 mb-10">
-            <h2 className="text-3xl font-bold text-white tracking-wide">Yönetim Kurulu</h2>
+            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.board')}</h2>
             <div className="h-px bg-white/20 flex-grow"></div>
           </div>
 
@@ -110,7 +111,7 @@ function Team() {
                     md:flex-wrap md:overflow-visible md:justify-center
                 `}
           >
-            {teamMembers.map((member) => (
+            {boardMembersData.map((member) => (
               <motion.div
                 key={member.id}
                 variants={itemVariants}
@@ -119,15 +120,15 @@ function Team() {
                         /* --- MOBİL --- */
                         flex-shrink-0 snap-center w-[85vw] max-w-[280px]
                         /* --- MASAÜSTÜ --- */
-                        md:w-full md:max-w-[280px] md:flex-shrink
+                        md:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.25rem)] md:max-w-[280px] md:flex-shrink-0
                     `}
               >
                 <FlipCard
                   foto={member.foto}
                   isim={member.isim}
-                  gorev={member.gorev}
+                  gorevKey={member.gorevKey}
                   reyting={member.reyting}
-                  yazi={member.yazi}
+                  yaziKey={member.yaziKey}
                   stats={member.stats}
                   variant={member.variant}
                   ikon={member.ikon}
@@ -141,9 +142,9 @@ function Team() {
 
 
         {/* --- NON-BOARD SECTION --- */}
-        <div className="w-full max-w-7xl px-4">
+        <div className="w-full max-w-[1536px] px-4">
           <div className="flex items-center space-x-4 mb-10">
-            <h2 className="text-3xl font-bold text-white tracking-wide">Ekip Üyeleri</h2>
+            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.members')}</h2>
             <div className="h-px bg-white/20 flex-grow"></div>
           </div>
 
@@ -158,22 +159,22 @@ function Team() {
                     md:flex-wrap md:overflow-visible md:justify-center
                 `}
           >
-            {teamMembers.map((member) => (
+            {coordinatorsData.map((member) => (
               <motion.div
                 key={member.id + "_nb"} // Unique key fix for demo
                 variants={itemVariants}
                 className={`
                         relative h-[300px] md:h-[300px] team-card
                         flex-shrink-0 snap-center w-[85vw] max-w-[280px]
-                        md:w-full md:max-w-[280px] md:flex-shrink
+                        md:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.25rem)] md:max-w-[280px] md:flex-shrink-0
                     `}
               >
                 <FlipCard
                   foto={member.foto}
                   isim={member.isim}
-                  gorev={member.gorev}
+                  gorevKey={member.gorevKey}
                   reyting={member.reyting}
-                  yazi={member.yazi}
+                  yaziKey={member.yaziKey}
                   stats={member.stats}
                   variant={member.variant}
                   ikon={member.ikon}
@@ -183,13 +184,11 @@ function Team() {
             <div className="w-2 flex-shrink-0 md:hidden"></div>
           </motion.div>
         </div>
+      </div>
 
-
-        {/* --- FOOTER --- */}
-        <div className="w-full mt-24">
-          <Footer />
-        </div>
-
+      {/* --- FOOTER --- */}
+      <div className="w-full mt-auto pt-24 z-10">
+        <Footer />
       </div>
     </main>
   );

@@ -1,113 +1,115 @@
 // Resimler
-import firat from "../assets/teamPhotos/fırat_foto.png";
-import fırat_birds from "../assets/teamPhotos/firat_birds.png";
+import defaultIkon from "../assets/teamPhotos/firat_birds.png";
 
-import foto2 from "../assets/teamPhotos/firat_birds.png";
-import foto3 from "../assets/teamPhotos/firat_birds.png";
-import foto4 from "../assets/teamPhotos/firat_birds.png";
-import foto5 from "../assets/teamPhotos/firat_birds.png";
-import foto6 from "../assets/teamPhotos/firat_birds.png";
+// NOT: Kendi fotoğraflarınızı `src/assets/teamPhotos/` içine ekledikten sonra
+// buradaki isimleri o dosyaların isimleriyle değiştirebilirsiniz.
+import baskanFoto from "../assets/teamPhotos/fırat_foto.png";
+import vppFoto from "../assets/teamPhotos/fırat_foto.png";
+import vpisFoto from "../assets/teamPhotos/fırat_foto.png";
+import saymanFoto from "../assets/teamPhotos/fırat_foto.png";
+import sekreterFoto from "../assets/teamPhotos/fırat_foto.png";
 
-
+import itCoordFoto from "../assets/teamPhotos/fırat_foto.png";
+import prCoordFoto from "../assets/teamPhotos/fırat_foto.png";
+import designCoordFoto from "../assets/teamPhotos/fırat_foto.png";
+import aktiviteCoordFoto from "../assets/teamPhotos/fırat_foto.png";
+import frCoordFoto from "../assets/teamPhotos/fırat_foto.png";
 
 // EKİP VERİSİ (Burayı düzenleyerek her şeyi değiştirebilirsin)
-const teamMembersData = [
+const boardMembersData = [
   {
     id: 1,
-    isim: "Fırat Göçmen",
-    gorev: "VPP",
-    foto: firat,
-    ikon: fırat_birds,
-    reyting: 94,
-    variant: "gold", // Renk: gold, blue, red, green
-    yazi: "Cuguliyi dinlemeyi severim.",
-    stats: [
-      { label: 'UCB', value: 95 },
-      { label: 'PM', value: 98 },
-      { label: 'ALKL', value: 0 },
-      { label: 'FIFA', value: -90 },
-    ]
+    isim: "Yönetim - Başkan",
+    gorevKey: "teamMembers.baskanRole",
+    foto: baskanFoto,
+    ikon: defaultIkon,
+    variant: "gold",
+    yaziKey: "teamMembers.baskanQuote",
   },
   {
     id: 2,
-    isim: "Zeynep Demir",
-    gorev: "Backend Dev",
-    foto: foto2,
-    ikon: fırat_birds,
-    reyting: 91,
-    variant: "blue", // Mavi Kart (Defansif/Teknik)
-    yazi: "Veritabanları asla yalan söylemez, sadece insanlar söyler.",
-    stats: [
-      { label: 'JAVA', value: 92 },
-      { label: 'SQL', value: 96 },
-      { label: 'API', value: 88 },
-      { label: 'BUG', value: 10 },
-    ]
+    isim: "Yönetim - VPP",
+    gorevKey: "teamMembers.vppRole",
+    foto: vppFoto,
+    ikon: defaultIkon,
+    variant: "blue",
+    yaziKey: "teamMembers.vppQuote",
   },
   {
     id: 3,
-    isim: "Caner Okyay",
-    gorev: "UI/UX Designer",
-    foto: foto3,
-    ikon: fırat_birds,
-    reyting: 89,
-    variant: "green", // Yeşil Kart (Yaratıcı)
-    yazi: "Tasarım sadece nasıl göründüğü değil, nasıl çalıştığıdır.",
-    stats: [
-      { label: 'FIGMA', value: 99 },
-      { label: 'RENK', value: 95 },
-      { label: 'UX', value: 85 },
-      { label: 'KOD', value: 40 },
-    ]
+    isim: "Yönetim - VPIS",
+    gorevKey: "teamMembers.vpisRole",
+    foto: vpisFoto,
+    ikon: defaultIkon,
+    variant: "green",
+    yaziKey: "teamMembers.vpisQuote",
   },
   {
     id: 4,
-    isim: "Elif Kara",
-    gorev: "Project Manager",
-    foto: foto4,
-    ikon: fırat_birds,
-    reyting: 93,
-    variant: "red", // Kırmızı Kart (Lider/Otorite)
-    yazi: "Deadline bir öneri değil, yaşam tarzıdır.",
-    stats: [
-      { label: 'PLAN', value: 98 },
-      { label: 'IKNA', value: 95 },
-      { label: 'AGILE', value: 90 },
-      { label: 'STRES', value: 99 },
-    ]
+    isim: "Yönetim - Sayman",
+    gorevKey: "teamMembers.saymanRole",
+    foto: saymanFoto,
+    ikon: defaultIkon,
+    variant: "red",
+    yaziKey: "teamMembers.saymanQuote",
   },
   {
     id: 5,
-    isim: "Murat Can",
-    gorev: "DevOps",
-    foto: foto5,
-    ikon: fırat_birds,
-    reyting: 88,
+    isim: "Yönetim - Sekreter",
+    gorevKey: "teamMembers.sekreterRole",
+    foto: sekreterFoto,
+    ikon: defaultIkon,
     variant: "blue",
-    yazi: "Ben uyurken bile sunucular çalışmaya devam eder.",
-    stats: [
-      { label: 'AWS', value: 90 },
-      { label: 'LINUX', value: 95 },
-      { label: 'CI/CD', value: 88 },
-      { label: 'UYKU', value: 30 },
-    ]
-  },
+    yaziKey: "teamMembers.sekreterQuote",
+  }
+];
+
+const coordinatorsData = [
   {
     id: 6,
-    isim: "Selin Vural",
-    gorev: "Marketing",
-    foto: foto6,
-    ikon: fırat_birds,
-    reyting: 90,
+    isim: "Koord - IT",
+    gorevKey: "teamMembers.itCoordRole",
+    foto: itCoordFoto,
+    ikon: defaultIkon,
     variant: "gold",
-    yazi: "Hikaye anlatıcılığı verilerle buluştuğunda büyü gerçekleşir.",
-    stats: [
-      { label: 'SEO', value: 92 },
-      { label: 'COPY', value: 95 },
-      { label: 'DATA', value: 85 },
-      { label: 'SOSYAL', value: 98 },
-    ]
+    yaziKey: "teamMembers.itCoordQuote",
   },
+  {
+    id: 7,
+    isim: "Koord - PR",
+    gorevKey: "teamMembers.prCoordRole",
+    foto: prCoordFoto,
+    ikon: defaultIkon,
+    variant: "blue",
+    yaziKey: "teamMembers.prCoordQuote",
+  },
+  {
+    id: 8,
+    isim: "Koord - Design",
+    gorevKey: "teamMembers.designCoordRole",
+    foto: designCoordFoto,
+    ikon: defaultIkon,
+    variant: "green",
+    yaziKey: "teamMembers.designCoordQuote",
+  },
+  {
+    id: 9,
+    isim: "Koord - Aktivite",
+    gorevKey: "teamMembers.aktiviteCoordRole",
+    foto: aktiviteCoordFoto,
+    ikon: defaultIkon,
+    variant: "red",
+    yaziKey: "teamMembers.aktiviteCoordQuote",
+  },
+  {
+    id: 10,
+    isim: "Koord - FR",
+    gorevKey: "teamMembers.frCoordRole",
+    foto: frCoordFoto,
+    ikon: defaultIkon,
+    variant: "gold",
+    yaziKey: "teamMembers.frCoordQuote",
+  }
 ];
 
 const themes = {
@@ -149,4 +151,4 @@ const themes = {
   }
 };
 
-export { teamMembersData, themes };
+export { boardMembersData, coordinatorsData, themes };
