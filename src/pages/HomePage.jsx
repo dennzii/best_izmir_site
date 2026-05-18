@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import bestmap from "../assets/HomePage/bestMap2.png";
+import bestmapLight from "../assets/HomePage/bestMap2.png";
+import bestmapDark from "../assets/HomePage/bestMap3.png";
 import Stars from '../Components/Stars';
-import { useInView } from 'react-intersection-observer'; // BU SATIRI EKLE
+import { useInView } from 'react-intersection-observer';
 
-// BİLEŞENLER
 import { Footer } from "../sections/Footer";
 import { Welcome } from "../sections/Welcome";
 import { ByNumbers } from "../sections/ByNumbers";
@@ -15,260 +15,153 @@ import { HomeEvents } from "../sections/HomeEvents";
 import { HomeContact } from "../sections/HomeContact";
 import { HomeSponsors } from "../sections/HomeSponsors";
 
-// GÖRSEL URL HELPER
-const url = (name, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+const cloudUrl = 'https://awv3node-homepage.surge.sh/build/assets/cloud.svg';
 
 const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
 const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
 
+// Her bulut için: konum + parallax hızı (rate: 0=scroll ile birlikte, 0.3=çok yavaş=çok geride)
+const CLOUDS = [
+  { left: '78%', top: '30vh',  width: '7%', opacityDark: 0.18, opacityLight: 0.40, rate: 0.30 },
+  { left: '57%', top: '100vh', width: '6%', opacityDark: 0.18, opacityLight: 0.40, rate: 0.45 },
+  { left: '12%', top: '140vh', width: '8%', opacityDark: 0.15, opacityLight: 0.35, rate: 0.20 },
+  { left: '82%', top: '175vh', width: '7%', opacityDark: 0.18, opacityLight: 0.38, rate: 0.55 },
+  { left: '42%', top: '225vh', width: '6%', opacityDark: 0.15, opacityLight: 0.35, rate: 0.35 },
+  { left: '8%',  top: '265vh', width: '5%', opacityDark: 0.15, opacityLight: 0.32, rate: 0.15 },
+];
+
+const S = 5000; // Sayfa toplam scroll tahmini (px)
+
 function HomePage() {
-  const parallax = useRef(null);
   const { isDark } = useTheme();
   const [topTriggerRef, inView] = useInView({ threshold: 0 });
+  const { scrollY } = useScroll();
 
-  // Ekran genişliği kontrolü (Mobil vs Desktop)
-  const [isMobile, setIsMobile] = React.useState(false);
+  // Bulut parallax — her biri farklı hızda "geride kalır"
+  const c0y = useTransform(scrollY, [0, S], [0, S * CLOUDS[0].rate]);
+  const c1y = useTransform(scrollY, [0, S], [0, S * CLOUDS[1].rate]);
+  const c2y = useTransform(scrollY, [0, S], [0, S * CLOUDS[2].rate]);
+  const c3y = useTransform(scrollY, [0, S], [0, S * CLOUDS[3].rate]);
+  const c4y = useTransform(scrollY, [0, S], [0, S * CLOUDS[4].rate]);
+  const c5y = useTransform(scrollY, [0, S], [0, S * CLOUDS[5].rate]);
+  const cloudYs = [c0y, c1y, c2y, c3y, c4y, c5y];
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize(); // İlk yüklemede kontrol et
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // Güneş/Hilal — çok az hareket
+  const decorY = useTransform(scrollY, [0, S], [0, S * 0.05]);
 
-  if (isMobile) {
-    // --- MOBİL GÖRÜNÜM (Parallax Yok) ---
-    return (
-      <div style={{ width: '100%', minHeight: '100vh', background: isDark ? DARK_BG : LIGHT_BG, position: 'relative', overflowX: 'hidden' }}>
+  const cloudFilter = isDark
+    ? 'none'
+    : 'invert(65%) sepia(40%) saturate(600%) hue-rotate(185deg) brightness(108%)';
 
-        {/* 1. NAVBAR (Sabit) */}
-        <div className="fixed top-0 left-0 w-full z-50">
-          <Nav isScrolled={!inView} />
-        </div>
-
-        {/* 2. ARKA PLAN (Yıldızlar + Dekorasyonlar) */}
-        <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
-          style={{ background: isDark ? DARK_BG : LIGHT_BG }}
-        >
-          <Stars />
-        </div>
-
-        {/* 3. İÇERİK AKIŞI (Z-Index ile yıldızların üstünde) */}
-        <div className="relative z-10 flex flex-col w-full">
-
-          {/* Scroll Tetikleyicisi (Nav rengi için) */}
-          <div ref={topTriggerRef} className="absolute top-0 w-full h-1 pointer-events-none" />
-
-          {/* WELCOME */}
-          <div className="w-full h-screen">
-            <Welcome />
-          </div>
-
-          {/* ABOUT US */}
-          <div className="w-full px-4 py-4">
-            <AboutUs />
-          </div>
-
-          {/* EVENTS */}
-          <div className="w-full px-4 py-4">
-            <HomeEvents />
-          </div>
-
-          {/* CONTACT */}
-          <div className="w-full px-4 py-4">
-            <HomeContact />
-          </div>
-
-          {/* SPONSORS */}
-          <div className="w-full py-4">
-            <HomeSponsors />
-          </div>
-
-          {/* HARİTA & BY NUMBERS (Üst üste bindirme) */}
-          <div className="relative w-full flex flex-col items-center justify-center py-4">
-
-            {/* HARİTA (Arkada) */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
-              <img src={bestmap} style={{ width: '90%', height: 'auto', maxWidth: '600px' }} alt="Best Map" />
-            </div>
-
-            {/* BY NUMBERS (Önde) */}
-            <div className="w-full z-10">
-              <ByNumbers />
-            </div>
-
-          </div>
-
-          {/* FOOTER */}
-          <div className="w-full mt-4">
-            <Footer />
-          </div>
-
-        </div>
-      </div>
-    );
-  }
-
-  // --- DESKTOP GÖRÜNÜM (Parallax Var) ---
   return (
-    <div style={{ width: '100%', height: '100%', background: isDark ? DARK_BG : LIGHT_BG }}>
-      {/* 1. NAVBAR */}
+    <div style={{ width: '100%', minHeight: '100vh', background: isDark ? DARK_BG : LIGHT_BG, position: 'relative', overflowX: 'hidden' }}>
 
+      {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
         <div className="pointer-events-auto">
-          {/* !inView diyerek mantığı tersine çevirip gönderiyoruz */}
           <Nav isScrolled={!inView} />
         </div>
       </div>
-      {/* 2. PARALLAX KAPSIYICI */}
-      <Parallax ref={parallax} pages={5.0}>
 
-        {/* --- KATMAN GRUBU A: ARKA PLANLAR --- */}
+      {/* SABİT ARKA PLAN — Yıldızlar */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0, background: isDark ? DARK_BG : LIGHT_BG }}>
+        <Stars />
+      </div>
 
-        {/* CSS GRADIENT + KOD YILDIZLAR */}
-        <ParallaxLayer
-          offset={0}
-          speed={0}
-          factor={8}
-          style={{ background: isDark ? DARK_BG : LIGHT_BG, backgroundSize: 'cover' }}
-        >
-          <Stars />
-        </ParallaxLayer>
+      {/* DEKORASYONLAR — scroll parallax ile hareket eder */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
 
-        <ParallaxLayer offset={0} speed={0} factor={0.1} style={{ zIndex: 0 }}>
-          <div
-            ref={topTriggerRef}
-            className="absolute top-0 w-full h-1 bg-transparent"
-          />
-        </ParallaxLayer>
-        {/* Bulut - AboutUs civarında */}
-        <ParallaxLayer offset={1.3} speed={0.8} style={{ opacity: isDark ? 0.3 : 0.55, pointerEvents: 'none', zIndex: 0 }}>
-          <img
-            src={url('cloud')}
+        {/* Güneş / Hilal */}
+        <motion.div style={{ position: 'absolute', left: '5%', top: 'calc(110vh - 80px)', y: decorY }}>
+          {isDark ? (
+            <svg width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.22 }}>
+              <defs>
+                <mask id="crescent">
+                  <circle cx="100" cy="100" r="88" fill="white"/>
+                  <circle cx="134" cy="82" r="68" fill="black"/>
+                </mask>
+              </defs>
+              <circle cx="100" cy="100" r="88" fill="#c7d2fe" mask="url(#crescent)"/>
+            </svg>
+          ) : (
+            <div style={{ width: '220px', height: '220px', borderRadius: '50%', background: '#fbbf24', opacity: 0.20 }} />
+          )}
+        </motion.div>
+
+        {/* Bulutlar */}
+        {CLOUDS.map((c, i) => (
+          <motion.img
+            key={i}
+            src={cloudUrl}
+            alt=""
             style={{
+              position: 'absolute',
               display: 'block',
-              width: '22%',
-              marginLeft: '8%',
-              filter: isDark ? 'none' : 'invert(65%) sepia(40%) saturate(600%) hue-rotate(185deg) brightness(108%)',
+              width: c.width,
+              left: c.left,
+              top: c.top,
+              filter: cloudFilter,
+              opacity: isDark ? c.opacityDark : c.opacityLight,
+              y: cloudYs[i],
             }}
-            alt="cloud"
           />
-        </ParallaxLayer>
+        ))}
+      </div>
 
-        {/* --- KATMAN GRUBU B: SÜSLEMELER --- */}
+      {/* İÇERİK — Normal scroll akışı, stabil */}
+      <div className="relative flex flex-col w-full" style={{ zIndex: 10 }}>
 
-        {/* DÜZELTME BURADA: BEST MAP (Harita) */}
-        {/* ByNumbers arkasında durması lazım. */}
-        <ParallaxLayer
-          offset={3.3}
-          speed={0.2}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            opacity: 0.4,
-            pointerEvents: 'none',
-            zIndex: 0
-          }}
-        >
-          <img src={bestmap} style={{ width: '50%', height: 'auto' }} alt="Best Map" />
-        </ParallaxLayer>
-
-
-        {/* --- KATMAN GRUBU C: İÇERİK --- */}
+        <div ref={topTriggerRef} className="absolute top-0 w-full h-1 pointer-events-none" />
 
         {/* 1. WELCOME */}
-        <ParallaxLayer
-          offset={0}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full">
-            <Welcome />
-          </div>
-        </ParallaxLayer>
+        <div className="w-full h-screen">
+          <Welcome />
+        </div>
 
         {/* 2. ABOUT US */}
-        <ParallaxLayer
-          offset={0.9}
-          speed={0.2}
-          factor={1.2}
-          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full pointer-events-auto px-4 mt-16">
-            <AboutUs />
-          </div>
-        </ParallaxLayer>
+        <div className="w-full">
+          <AboutUs />
+        </div>
 
         {/* 3. EVENTS */}
-        <ParallaxLayer
-          offset={1.5}
-          speed={0.2}
-          factor={1.2}
-          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full pointer-events-auto px-4 mt-16">
-            <HomeEvents />
-          </div>
-        </ParallaxLayer>
+        <div className="w-full">
+          <HomeEvents />
+        </div>
 
         {/* 4. CONTACT */}
-        <ParallaxLayer
-          offset={2.1}
-          speed={0.2}
-          factor={1.2}
-          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full pointer-events-auto px-4 mt-16">
-            <HomeContact />
-          </div>
-        </ParallaxLayer>
+        <div className="w-full">
+          <HomeContact />
+        </div>
 
         {/* 5. SPONSORS */}
-        <ParallaxLayer
-          offset={2.85}
-          speed={0.3}
-          factor={0.6}
-          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full pointer-events-auto">
-            <HomeSponsors />
-          </div>
-        </ParallaxLayer>
+        <div className="w-full">
+          <HomeSponsors />
+        </div>
 
         {/* 6. BY NUMBERS */}
-        <ParallaxLayer
-          offset={3.3}
-          speed={0.5}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
-        >
-          <div className="w-full pointer-events-auto">
-            <ByNumbers />
+        {/* Mobil: düz akış */}
+        <div className="md:hidden w-full">
+          <ByNumbers />
+        </div>
+        {/* Desktop: harita arkada, ByNumbers üstünde */}
+        <div className="hidden md:flex relative w-full justify-center items-center">
+          <img
+            src={isDark ? bestmapDark : bestmapLight}
+            className="pointer-events-none"
+            style={{ width: '58%', height: 'auto', opacity: 0.18, position: 'relative', zIndex: 0 }}
+            alt="Best Map"
+          />
+          <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: 1 }}>
+            <div className="w-full">
+              <ByNumbers />
+            </div>
           </div>
-        </ParallaxLayer>
+        </div>
 
-        {/* 7. FOOTER */}
-        <ParallaxLayer
-          offset={4.1}
-          speed={0.5}
-          factor={0.9}
-          style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            zIndex: 100
-          }}
-        >
-          <div className="w-full">
-            <Footer />
-          </div>
-        </ParallaxLayer>
+        {/* 7. FOOTER — map bittikten sonra */}
+        <Footer />
 
-      </Parallax>
+      </div>
     </div>
   );
 }

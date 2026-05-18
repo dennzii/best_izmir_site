@@ -1,5 +1,6 @@
 import logo_beyaz from "../assets/logo_beyaz.png";
 import logo_siyah from "../assets/BEST Izmir Logo Siyah.png";
+import logo from "../assets/logo_normal.png";
 import { navLinks } from "../constants";
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,7 +32,7 @@ export const Nav = ({ isScrolled }) => {
             : "bg-transparent py-6")
         : (isScrolled || isOpen
             ? "bg-white/90 backdrop-blur-xl py-3 shadow-lg border-b border-slate-200"
-            : "bg-white/30 backdrop-blur-md py-6");
+            : "bg-transparent py-6");
 
     const linkClass = isDark
         ? (isScrolled ? "text-slate-200 hover:text-white" : "text-white hover:text-purple-300")
@@ -48,7 +49,7 @@ export const Nav = ({ isScrolled }) => {
                     <a href="/" className="relative z-[60]">
                         <img
                             className={`transition-all duration-300 drop-shadow-lg ${isScrolled ? 'w-24' : 'w-32'}`}
-                            src={isDark ? logo_beyaz : logo_siyah}
+                            src={isDark ? logo_beyaz : logo}
                             alt="Logo"
                         />
                     </a>
@@ -75,13 +76,9 @@ export const Nav = ({ isScrolled }) => {
                             </li>
                         ))}
 
-                        {/* Dil Değiştirici */}
-                        <li>
+                        {/* Dil + Tema — birbirine yakın, nav linklerinden ayrı */}
+                        <li className={`flex items-center gap-2 ml-4 pl-6 border-l ${isDark ? 'border-white/20' : 'border-slate-300/50'}`}>
                             <LanguageSwitcher />
-                        </li>
-
-                        {/* Tema Toggle */}
-                        <li>
                             <button
                                 onClick={toggleTheme}
                                 aria-label="Toggle theme"

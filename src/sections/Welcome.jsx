@@ -19,10 +19,10 @@ export const Welcome = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       </div>
 
-      <div className="absolute inset-0 flex flex-col justify-start items-start pl-8 pt-56 md:justify-center md:pt-0 md:pl-20">
-        <h1 className="text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word1')}</h1>
-        <h1 className="text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word2')}</h1>
-        <h1 className="text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word3')}</h1>
+      <div className="absolute inset-0 flex flex-col justify-center items-start pl-8 md:pl-20">
+        <h1 className="hidden md:block text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word1')}</h1>
+        <h1 className="hidden md:block text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word2')}</h1>
+        <h1 className="hidden md:block text-slate-300 text-6xl sm:text-7xl md:text-8xl font-bold z-10 drop-shadow-lg">{t('welcome.word3')}</h1>
       </div>
     </section>
   );

@@ -44,7 +44,7 @@ export const HomeSponsors = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full py-8 relative z-10">
+    <section className="w-full pt-16 pb-12 relative z-10">
       <style>{`
         @keyframes sponsorScroll {
           0%   { transform: translateX(0); }

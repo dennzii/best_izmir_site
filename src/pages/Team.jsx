@@ -150,7 +150,7 @@ function Team() {
         <div className="w-full max-w-[1536px] px-4 mb-20">
           <div className="flex items-center space-x-4 mb-10">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">{t('teamPage.supervisors')}</h2>
-            <div className="h-px bg-white/20 flex-grow"></div>
+            <div className="h-px bg-slate-300 dark:bg-white/20 flex-grow"></div>
           </div>
 
           <motion.div
@@ -192,7 +192,7 @@ function Team() {
         <div className="w-full max-w-[1536px] px-4">
           <div className="flex items-center space-x-4 mb-10">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">{t('teamPage.members')}</h2>
-            <div className="h-px bg-white/20 flex-grow"></div>
+            <div className="h-px bg-slate-300 dark:bg-white/20 flex-grow"></div>
           </div>
 
           <motion.div

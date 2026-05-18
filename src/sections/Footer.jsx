@@ -14,10 +14,10 @@ export const Footer = () => {
     <footer className={`w-full relative z-10 border-t ${isDark ? 'border-white/10 bg-black/60 backdrop-blur-xl' : 'border-slate-200 bg-white/80 backdrop-blur-xl'}`}>
 
       {/* Ana İçerik */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 divide-y md:divide-y-0 divide-slate-200 dark:divide-white/10">
 
-        {/* SÜTUN 1: Logo + Açıklama + Sosyal Medya */}
-        <div className="flex flex-col gap-4">
+        {/* SÜTUN 1: Logo */}
+        <div className="flex flex-col gap-4 items-center md:items-start pb-6 md:pb-0">
           <a href="/">
             <img
               src={isDark ? logoDark : logoLight}
@@ -28,7 +28,7 @@ export const Footer = () => {
         </div>
 
         {/* SÜTUN 2: Hızlı Bağlantılar */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start pt-6 md:pt-0 pb-6 md:pb-0">
           <h4 className={`text-sm font-bold uppercase tracking-widest mb-1 ${isDark ? 'text-white' : 'text-slate-800'}`}>
             {t('footer.quickLinks')}
           </h4>
@@ -48,7 +48,7 @@ export const Footer = () => {
         </div>
 
         {/* SÜTUN 3: İletişim */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 items-center md:items-start pt-6 md:pt-0">
           <h4 className={`text-sm font-bold uppercase tracking-widest mb-1 ${isDark ? 'text-white' : 'text-slate-800'}`}>
             {t('footer.contactTitle')}
           </h4>

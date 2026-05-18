@@ -61,7 +61,7 @@
         "title1": "ABOUT US - BEST IZMIR",
         "text1": "BEST Izmir is an international student organization that has been active for over 250 members since 2008. Its mission is to empower students by fostering diversity and creating opportunities for their personal and academic development.\n\nBEST Izmir offers its members countless opportunities, such as traveling to new destinations, participating in horizon-expanding events, and gaining hands-on experience by taking active roles within teams and departments, while also providing a platform to connect with people from all around the world, develop skills, and take part in unique experiences that support both personal and professional growth.",
         "title2": "What is BEST?",
-        "text2": "BEST, Board of European Students of Technology is a constantly growing non-profit and non-political organisation. Since 1989 BEST provides communication, co-operation and exchange possibilities for students all over Europe.\n81 Local BEST Groups (LBGs) in 29 countries are creating a growing, well organised, powerful, young and innovative student network.\n\nBEST strives to help European students of technology to become more internationally minded, by reaching a better understanding of European cultures and developing capacities to work on an international basis. Therefore BEST creates opportunities for the students to meet and learn from one another through academic and non-academic events and educational symposia. \"Learning makes the master\", but the final goal is a good working place, therefore BEST offers services like an international career centre to broaden the horizons for the choice on the job market.\nPriority is to offer high quality services for students all over Europe. Thus, BEST manages to bring all the partners in the \"student - company - university\" triangle closer.",
+        "text2": "BEST, Board of European Students of Technology is a constantly growing non-profit and non-political organisation. Since 1989 BEST provides communication, co-operation and exchange possibilities for students all over Europe.\n94 Local BEST Groups (LBGs) across 34 countries and 3,300+ active members are creating a growing, well organised, powerful, young and innovative student network.\n\nBEST strives to help European students of technology to become more internationally minded, by reaching a better understanding of European cultures and developing capacities to work on an international basis. Therefore BEST creates opportunities for the students to meet and learn from one another through academic and non-academic events and educational symposia. \"Learning makes the master\", but the final goal is a good working place, therefore BEST offers services like an international career centre to broaden the horizons for the choice on the job market.\nPriority is to offer high quality services for students all over Europe. Thus, BEST manages to bring all the partners in the \"student - company - university\" triangle closer.",
         "title3": "Vision & Mission",
         "text3": "Vision: Empowered Diversity\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.\n\nMission: Developing Students\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.",
         "readMore": "Read More"
@@ -96,6 +96,28 @@
         "contactTitle": "Contact",
         "address": "Ege University, Faculty of Engineering, Bornova / Izmir",
         "followUs": "Follow Us"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers to the most common questions about BEST Izmir.",
+        "q1": "What does BEST stand for?",
+        "a1": "BEST stands for Board of European Students of Technology. Founded in 1989, it is a non-profit, non-political student organization operating through 94 Local BEST Groups (LBGs) across 34 countries.",
+        "q2": "Can students from fields other than engineering join?",
+        "a2": "Currently, we can only accept students from STEM (quantitative) fields.",
+        "q3": "What do you offer students beyond courses?",
+        "a3": "During your time in BEST, you can receive many trainings focused on self-development and take part in numerous organizations. On top of that, we offer plenty of fun and great friendships.",
+        "q4": "How many departments are there in BEST?",
+        "a4": "We have 5 departments: Corporate Relations, Design, PR, IT, and FR.",
+        "q5": "Are there any prerequisites for applications?",
+        "a5": "There are no prerequisites. Any undergraduate, master's, or doctoral student at Ege University is welcome to apply.",
+        "q6": "What kind of trainings do you provide in BEST?",
+        "a6": "We provide trainings in time management, presentation skills, organizational training, leadership, and many other areas that greatly contribute to your personal growth.",
+        "q7": "Will BEST contribute to my career after graduation?",
+        "a7": "Absolutely. The experience you gain in BEST will give you a head start in the business world. You will receive trainings that develop you and learn firsthand how a company operates. Through our career days and teamwork, you will also have the chance to directly interact with many companies.",
+        "q8": "My English is not good enough. Can I still join?",
+        "a8": "Of course you can. In fact, BEST is the ideal place to practice and improve your language skills by participating in international projects.",
+        "q9": "Why should we choose BEST?",
+        "a9": "With BEST, you can participate in and organize events that continuously help you grow. With a network of 3,300+ active members and 94 local groups across 34 countries, you can meet BESTies from all over the world."
     },
     "contact": {
         "title": "CONTACT US",
