@@ -9,7 +9,7 @@ import { aboutUsContent } from '../data/AboutUsData';
 import { FiChevronDown } from 'react-icons/fi';
 
 const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
-const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #e0f2fe 0%, #dcfce7 50%, #fffbeb 100%)';
 
 function AboutUsPage() {
     const { t } = useTranslation();

@@ -24,10 +24,10 @@ export const HomeEvents = () => {
                 {/* --- RIGHT TEXT CONTENT (Left on Mobile) --- */}
                 <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left">
                     <div className="mb-6">
-                        <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 dark:from-purple-400 dark:to-pink-300 drop-shadow-lg mb-2">
+                        <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-sky-500 dark:from-purple-400 dark:to-pink-300 drop-shadow-lg mb-2">
                             {t("eventsPage.title")}
                         </h2>
-                        <div className="h-1 w-24 bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
+                        <div className="h-1 w-24 bg-teal-500 dark:bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(20,184,166,0.8)] dark:shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
                     </div>
 
                     <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 font-light leading-relaxed mb-8">
@@ -47,7 +47,7 @@ export const HomeEvents = () => {
                 {/* --- LEFT IMAGE --- */}
                 <div className="md:w-1/2 w-full flex justify-center mt-10 md:mt-0">
                     <div className="relative group w-full max-w-md">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-sky-500 dark:from-purple-600 dark:to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                         <img
                             alt="BEST Izmir Events"
                             src={aboutFoto2}

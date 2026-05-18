@@ -1,109 +1,112 @@
-# BEST İzmir Website
+# BEST İzmir — Resmi Web Sitesi
 
-HOŞGELDİN. Öncelikle bu yazıya vscode üzerinden bakıyorsan: "Ctrl + Shift + V" yapıp önizleme yapabilirsin.
+> Board of European Students of Technology — İzmir Yerel Grubu
 
-BEST İzmir'in resmi web sitesi. Bu site React ve Vite ile oluşturulmuştur.
-Gelecekteki BEST İzmir üyelerinin siteyi rahatça güncelleyebilmesi için Üzeyir Talha Kılıç tarafından bu kılavuz hazırlanmıştır. 🎉
-
----
-
-## 🛠 Projeyi Çalıştırma
-
-Projeyi yerel bilgisayarınızda (kendi bilgisayarınızda) çalıştırmak için aşağıdaki adımları izleyin:
-
-1. Gerekli kütüphaneleri yükleyin:
-   ```bash
-   npm install
-   ```
-2. Geliştirici sunucusunu başlatın:
-   ```bash
-   npm run dev
-   ```
-3. Terminalde çıkan `http://localhost:5173/` linkine tıklayarak siteyi görüntüleyin.
+**React · Vite · Tailwind CSS · Framer Motion · i18next**
 
 ---
 
-## 📝 Site İçeriğini (Yazıları ve Çevirileri) Nasıl Güncellerim?
+## Proje Hakkında
 
-Sitemiz **İngilizce** ve **Türkçe** olmak üzere çift dil destekli çalışır. Metinlerin hiçbiri doğrudan kodların (`.jsx` dosyalarının) içine yazılmaz; her şey çeviri dosyalarından okunur.
+BEST İzmir'in resmi tanıtım sitesidir. Öğrenci dostu bir teknoloji yığını kullanılarak geliştirilmiş; **içeriklerin kod bilmeden güncellenebilmesi** öncelikli tasarım hedefi olmuştur.
 
-Bir yazıyı değiştirmek istiyorsanız **`public/locales/`** klasörüne gitmelisiniz:
-- **Türkçe kelimeler için:** `public/locales/tr/translation.json`
-- **İngilizce kelimeler için:** `public/locales/en/translation.json`
+### Özellikler
 
-> 💡 **ÖNEMLİ:** Bir metni Türkçe dosyasında değiştiriyorsanız veya yenisini ekliyorsanız, sistemin çökmemesi ve kusursuz çalışması için İngilizce dosyasına da **aynı anahtar isimle (key)** karşılığını eklemelisiniz.
-
-### En Çok Değişen Bölümler (Dosyanın En Üstündedir)
-Sürekli güncellenen kısımlar `translation.json` dosyalarının en üstüne yerleştirilmiştir.
-- **`events`**: Etkinlik başlıkları ve açıklamaları. (Örn: Bahar Hackathonu)
-- **`teamMembers`**: Yönetim Kurulu ve ekip üyelerinin görevleri ve tırnak içi sözleri.
-- **`byNumbers`**: "Rakamlarla BEST" bölümündeki sayılar ve açıklamalar.
-- **`aboutUs`**: Hakkımızda bölümündeki metinler.
+- **Çift dil desteği** — Türkçe / İngilizce, çeviri dosyalarından yönetilir
+- **Dark / Light mod** — kullanıcı tercihi tarayıcıda saklanır
+- **Mobil uyumlu** — tüm ekran boyutlarında responsive tasarım
+- **Parallax dekorasyon** — scroll ile hareket eden bulut ve hilal/güneş animasyonları
+- **Ekip kartları** — hover glow efektli, kart rengi üyeye özel
+- **FAQ bölümü** — accordion animasyonlu sık sorulan sorular
+- **Sponsorlar carousel** — otomatik kayan logo bandı
+- **Rakamlarla BEST** — istatistik kartları
 
 ---
 
-## 👥 Ekip Üyelerini (Team) Nasıl Güncellerim?
+## Hızlı Başlangıç
 
-Ekip üyelerinin fotoğrafları, isimleri ve sıralamaları **`src/data/TeamMembers.jsx`** dosyasından kontrol edilir. 
-Ekibe yeni birini eklemek veya çıkarmak için yalnızca bu dosyayı düzenlemeniz yeterlidir.
+```bash
+# 1. Bağımlılıkları yükle
+npm install
 
-### Yeni Bir Üye Eklemek İçin:
-1. Üyenin kapak fotoğrafını ve logosunu/ikonunu `src/assets/teamPhotos/` klasörüne atın.
-2. `src/data/TeamMembers.jsx` dosyasının en üstünde bu resimleri `import` edin:
-   ```javascript
-   import yeniUyeFoto from "../assets/teamPhotos/yeni_foto.png";
-   ```
-3. Dosyanın içindeki `teamMembersData` dizisine yeni üyeyi şu formatta ekleyin:
-   ```javascript
-   {
-       id: 7, // Her üyede farklı bir ID olmalı
-       isim: "Yeni Üye Adı",
-       gorevKey: "teamMembers.yeniUyeRole", // translation.json dosyasından gelecek
-       foto: yeniUyeFoto,
-       ikon: fırat_birds, // İsteğe bağlı ikon
-       variant: "gold", // Kart rengi: gold, blue, red, green olabilir
-       yaziKey: "teamMembers.yeniUyeQuote" // translation.json dosyasından gelecek
-   }
-   ```
-4. Son olarak `translation.json` (Hem TR hem EN) dosyasına gidip `"teamMembers"` bloğu içine yeni görev ve sözleri ekleyin:
-   ```json
-       "yeniUyeRole": "Yeni Görev",
-       "yeniUyeQuote": "Merhaba, ben yeni bestie."
-   ```
+# 2. Geliştirici sunucusunu başlat
+npm run dev
+```
+
+Tarayıcıda `http://localhost:5173` adresine git.
 
 ---
 
-## 📅 Etkinlikleri (Events) Nasıl Güncellerim?
+## Teknoloji Yığını
 
-Etkinliklerin resimleri, tarihleri ve sıralaması **`src/data/EventsData.js`** dosyasından kontrol edilir.
-
-1. `src/data/EventsData.js` dosyasına gidin.
-2. Yeni etkinliği listeye ekleyin:
-   ```javascript
-   {
-       id: 6,
-       titleKey: "events.title6", // translation.json dosyasından
-       date: "10-15 Mayıs 2025",
-       descKey: "events.desc6", // translation.json dosyasından
-       image: "RESIM_LINKI_VEYA_IMPORT_EDİLMİŞ_RESIM"
-   }
-   ```
-3. `translation.json` (TR ve EN) dosyasındaki `"events"` bloğuna gidin ve başlık ile açıklamayı ekleyin:
-   ```json
-       "title6": "Yeni Etkinlik Adı",
-       "desc6": "Bu etkinliğin kısa açıklaması burada yer alır."
-   ```
+| Katman    | Teknoloji                      |
+| --------- | ------------------------------ |
+| UI        | React 18 + Vite                |
+| Stil      | Tailwind CSS (darkMode: class) |
+| Animasyon | Framer Motion                  |
+| Çeviri    | i18next + react-i18next        |
+| İkonlar   | react-icons                    |
+| Routing   | React Router v6                |
 
 ---
 
-## 🔢 Rakamlarla BEST (By Numbers) Verilerini Nasıl Güncellerim?
+## İçerik Güncelleme Rehberleri
 
-Ana sayfadaki istatistiklerin sayısı (örn: 1M+, 86+) **`src/data/ByNumbersData.js`** dosyasında tutulur. Sayıları oradan değiştirebilirsiniz. Bu sayıların altındaki "Üniversite Sayısı" gibi yazılar ise yine `translation.json` içindeki `"byNumbers"` bloğundan değiştirilir.
+Dönem başı güncellemeler için ayrıntılı rehberler `rehberler/` klasöründe önem sırasına göre numaralandırılmış olarak bulunur:
+
+| #   | Rehber                                                                     | İçerik                                                |
+| --- | -------------------------------------------------------------------------- | ----------------------------------------------------- |
+| 01  | [KesinlikleYap](./rehberler/01_KesinlikleYap.md)                           | Dönem başı kontrol listesi + geliştirme önerileri     |
+| 02  | [KesinlikleYapma](./rehberler/02_KesinlikleYapma.md)                       | Yapılmaması gerekenler (öğrenilmiş dersler)           |
+| 03  | [EkipVeFotograflariGuncelle](./rehberler/03_EkipVeFotograflariGuncelle.md) | Ekip fotoğrafları ve kart verileri nasıl değiştirilir |
+| 04  | [TurkceIngilizceSistemi](./rehberler/04_TurkceIngilizceSistemi.md)         | Çeviri sistemi (i18next) nasıl çalışır                |
+| 05  | [NasilResimleriDegistiririm](./rehberler/05_NasilResimleriDegistiririm.md) | Asset klasörü yapısı, resim değiştirme                |
+| 06  | [NasilSponsorEklerim](./rehberler/06_NasilSponsorEklerim.md)               | Sponsor / partner logosu ekleme/çıkarma               |
+| 07  | [TemaSistemiHakkinda](./rehberler/07_TemaSistemiHakkinda.md)               | Dark/Light tema sistemi                               |
+| 08  | [NasilGitKullanirim](./rehberler/08_NasilGitKullanirim.md)                 | Git temelleri (commit, push, branch)                  |
+| 09  | [NasilAIKullanirim](./rehberler/09_NasilAIKullanirim.md)                   | LLM ile verimli çalışma                               |
 
 ---
 
-## 🎨 Tasarım ve Animasyonlar
+## Proje Yapısı
 
-Sitemizde tasarımlar **Tailwind CSS** kullanılarak geliştirilmiştir. Animasyonlar ve parallax efektleri için ise **Framer Motion** ve **React Spring Parallax** kullanılmıştır.
-- **Renk / Stil / Şekil Düzenlemeleri:** Sayfaların (örn: `HomePage.jsx` veya `AboutUs.jsx`) içindeki `className="..."` kısımlarına müdahale edebilirsiniz.
-- **Animasyon Düzenlemeleri:** Kart çevirme ve kaydırma gibi animasyonlar için Framer Motion `motion.div` etiketlerinin `transition`, `initial` ve `animate` özelliklerini kurcalayabilirsiniz.
+```
+best_izmir_site/
+├── public/
+│   └── locales/
+│       ├── tr/translation.json   ← Türkçe metinler
+│       └── en/translation.json   ← İngilizce metinler
+├── src/
+│   ├── assets/                   ← Görseller (logo, ekip fotoğrafları, etkinlik resimleri)
+│   ├── Components/               ← Nav, FlipCard, Stars
+│   ├── context/                  ← ThemeContext (dark/light mod)
+│   ├── data/                     ← TeamMembers, EventsData, ByNumbersData
+│   ├── pages/                    ← HomePage, Team, Events, Contact, AboutUs, Partners
+│   └── sections/                 ← Welcome, AboutUs, HomeEvents, Footer, ByNumbers...
+└── rehberler/                    ← Dönem başı güncelleme rehberleri (01–09)
+```
+
+---
+
+## En Sık Değiştirilen Dosyalar
+
+| Ne değiştirmek istiyorsun         | Hangi dosya                                                  |
+| --------------------------------- | ------------------------------------------------------------ |
+| Ekip üyeleri, fotoğraflar, sözler | `src/data/TeamMembers.jsx`                                   |
+| Sayfadaki metinler                | `public/locales/tr/translation.json` + `en/translation.json` |
+| Etkinlikler                       | `src/data/EventsData.js`                                     |
+| Rakamlarla BEST istatistikleri    | `src/data/ByNumbersData.js`                                  |
+| Sponsor logoları                  | `src/pages/Partners.jsx` + `src/sections/HomeSponsors.jsx`   |
+| Logo, arka plan fotoğrafı         | `src/assets/` (aynı isimle üzerine kaydet)                   |
+
+---
+
+## Katkıda Bulunanlar
+
+Bu site **Şemal Çiftçi** ve **Üzeyir Talha Kılıç** tarafından BEST İzmir 2025–2026 dönemi IT Koordinatörlüğü olarak geliştirilmiştir.
+
+Sonraki IT Koordinatörü olarak sana bırakılan notlar için [rehberler/01_KesinlikleYap.md](./rehberler/01_KesinlikleYap.md) dosyasını oku.
+
+---
+
+_Board of European Students of Technology — İzmir · [best-eu.org](https://best-eu.org)_

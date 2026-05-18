@@ -11,7 +11,7 @@ export const Footer = () => {
   const { isDark } = useTheme();
 
   return (
-    <footer className={`w-full relative z-10 border-t ${isDark ? 'border-white/10 bg-black/60 backdrop-blur-xl' : 'border-slate-200 bg-white/80 backdrop-blur-xl'}`}>
+    <footer className={`w-full relative z-10 border-t ${isDark ? 'border-white/10 bg-black/60 backdrop-blur-xl' : 'border-teal-200 bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50/80 backdrop-blur-xl'}`}>
 
       {/* Ana İçerik */}
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 divide-y md:divide-y-0 divide-slate-200 dark:divide-white/10">
@@ -91,7 +91,7 @@ export const Footer = () => {
       </div>
 
       {/* Alt Telif Hakkı Çizgisi */}
-      <div className={`border-t ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
+      <div className={`border-t ${isDark ? 'border-white/10' : 'border-teal-200'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
             {t('footer.rights')} © {new Date().getFullYear()} BEST İzmir.

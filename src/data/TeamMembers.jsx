@@ -146,6 +146,7 @@ const themes = {
   gold: {
     border:       'border-amber-500/25',
     shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(251,191,36,0.08)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.60), 0 0 40px rgba(251,191,36,0.40)',
     frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
     backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
     accentBar:    'bg-amber-500',
@@ -160,6 +161,7 @@ const themes = {
   blue: {
     border:       'border-sky-500/25',
     shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(56,189,248,0.08)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.60), 0 0 40px rgba(56,189,248,0.40)',
     frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
     backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
     accentBar:    'bg-sky-500',
@@ -174,6 +176,7 @@ const themes = {
   red: {
     border:       'border-rose-500/25',
     shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(251,113,133,0.08)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.60), 0 0 40px rgba(251,113,133,0.40)',
     frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
     backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
     accentBar:    'bg-rose-500',
@@ -188,6 +191,7 @@ const themes = {
   green: {
     border:       'border-emerald-500/25',
     shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(52,211,153,0.08)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.60), 0 0 40px rgba(52,211,153,0.40)',
     frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
     backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
     accentBar:    'bg-emerald-500',
@@ -205,6 +209,7 @@ const lightThemes = {
   gold: {
     border:       'border-amber-300/60',
     shadow:       '0 8px 32px rgba(0,0,0,0.10), 0 0 20px rgba(251,191,36,0.15)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.18), 0 0 40px rgba(251,191,36,0.45)',
     frontBg:      'bg-gradient-to-b from-amber-50 to-white',
     backBg:       'bg-gradient-to-b from-white to-amber-50',
     accentBar:    'bg-amber-500',
@@ -219,6 +224,7 @@ const lightThemes = {
   blue: {
     border:       'border-sky-300/60',
     shadow:       '0 8px 32px rgba(0,0,0,0.10), 0 0 20px rgba(56,189,248,0.15)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.18), 0 0 40px rgba(56,189,248,0.45)',
     frontBg:      'bg-gradient-to-b from-sky-50 to-white',
     backBg:       'bg-gradient-to-b from-white to-sky-50',
     accentBar:    'bg-sky-500',
@@ -233,6 +239,7 @@ const lightThemes = {
   red: {
     border:       'border-rose-300/60',
     shadow:       '0 8px 32px rgba(0,0,0,0.10), 0 0 20px rgba(251,113,133,0.15)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.18), 0 0 40px rgba(251,113,133,0.45)',
     frontBg:      'bg-gradient-to-b from-rose-50 to-white',
     backBg:       'bg-gradient-to-b from-white to-rose-50',
     accentBar:    'bg-rose-500',
@@ -247,6 +254,7 @@ const lightThemes = {
   green: {
     border:       'border-emerald-300/60',
     shadow:       '0 8px 32px rgba(0,0,0,0.10), 0 0 20px rgba(52,211,153,0.15)',
+    hoverShadow:  '0 20px 48px rgba(0,0,0,0.18), 0 0 40px rgba(52,211,153,0.45)',
     frontBg:      'bg-gradient-to-b from-emerald-50 to-white',
     backBg:       'bg-gradient-to-b from-white to-emerald-50',
     accentBar:    'bg-emerald-500',
