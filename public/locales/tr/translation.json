@@ -7,7 +7,9 @@
         "title3": "beINCI",
         "desc3": "Türkiye’deki diğer BEST gruplarıyla bir araya geldiğimiz, her yıl düzenlenen ulusal etkinliğimizdir. Takım yönetimi, proje yönetimi ve kişisel gelişim odaklı eğitimlerin yanı sıra; diğer Türk LBG’leriyle network kurma, bağlarımızı güçlendirmeyi amaçlar.",
         "title4": "BEST Kursları",
-        "desc4": "Avrupa’dan gelen öğrencilerle akademik ve kültürel paylaşım sağladığımız; eğitimlerin yanı sıra kültürel akşamlar, şehir gezileri ve unutulmaz arkadaşlıklar sunan, uluslararası BEST geleneğinin bir parçası olan bir etkinliktir."
+        "desc4": "Avrupa’dan gelen öğrencilerle akademik ve kültürel paylaşım sağladığımız; eğitimlerin yanı sıra kültürel akşamlar, şehir gezileri ve unutulmaz arkadaşlıklar sunan, uluslararası BEST geleneğinin bir parçası olan bir etkinliktir.",
+        "title5": "EBEC",
+        "desc5": "AVRUPA BEST MÜHENDİSLİK YARIŞMASI, inovatif tasarım ve vaka analizi olarak ikiye ayrılan, takım bazlı 3 seviyeden oluşan bir yarışmadır. Her iki kategori de teknoloji öğrencilerine, çalışmaları sırasında elde ettikleri teorik bilgileri kullanmalarına imkan sağlamak için geliştirilen disiplinler arası görevlere dayanmaktadır. Etkinlikler yerel aşamada başlayan ve kazananların ülke bazında olan aşamadan geçtiği ve avrupa finali ile sonuçlanan bir piramit şeklinde sıralanmıştır. EBEC yılda bir kez düzenlenmektedir ve süreç ilk yerel turdan EBEC’in son turuna kadar devam etmektedir."
     },
     "eventsPage": {
         "title": "BEST ETKİNLİKLERİ",
@@ -64,11 +66,22 @@
         "text3": "Vizyon: Güçlendirilmiş Çeşitlilik\nİnsanların farklı kültürleri ve toplumları anladığı ve bunlara saygı duyduğu bir dünya oluşturmak. Güçlendirilmiş çeşitlilik ortamı, bireylerin tüm potansiyellerini ortaya koymalarını ve sorumluluk bilinciyle hareket etmelerini destekler.\n\nMisyon: Öğrencileri Geliştirmek\nBEST, öğrencilerin uluslararası bir düşünce biçimine erişmesine, yeni kültürler ve toplumlar hakkında daha derin bir anlayış geliştirmelerine yardımcı olur. BEST, öğrencilerin kişisel gelişimlerine yönelik fırsatlar yaratır ve onların potansiyellerini en üst düzeye çıkarmalarını destekler.",
         "readMore": "Daha Fazlasını Gör"
     },
+    "partners": {
+        "title": "PARTNERLERİMİZ",
+        "subtitle": "Bizi destekleyen kurumlar ve kuruluşlar.",
+        "sponsorTitle": "Neden Bize Sponsor Olmalısınız?",
+        "sponsorText": "BEST İzmir, Ege Üniversitesi bünyesinde faaliyet gösteren uluslararası bir öğrenci topluluğudur. 2008 yılından bu yana 250'nin üzerinde üyesiyle Avrupa'nın 29 ülkesindeki BEST ağının aktif bir parçasıyız. Organizasyonumuz; teknoloji öğrencilerini sektörle buluşturan etkinlikler, eğitimler ve uluslararası kurslar düzenlemektedir. Sponsorluk iş birliğiyle markanızı binlerce genç mühendis adayıyla tanıştırabilir, kurumsal imajınızı güçlendirebilir ve geleceğin mühendisleriyle erken bağ kurabilirsiniz.",
+        "contactButton": "Bizimle İletişime Geçin",
+        "sectionTitle": "Partnerlerimiz",
+        "sectionSubtitle": "Bizi destekleyen kurumlar",
+        "viewAll": "Tüm Partnerlerimizi Görüntüle"
+    },
     "navbar": {
         "home": "Ana Sayfa",
         "about": "Hakkımızda",
         "events": "Etkinlikler",
         "team": "Ekibimiz",
+        "partners": "Partnerler",
         "contact us": "İletişim"
     },
     "welcome": {
@@ -77,7 +90,12 @@
         "word3": "Çay"
     },
     "footer": {
-        "rights": "Tüm hakları saklıdır"
+        "rights": "Tüm hakları saklıdır",
+        "description": "Avrupa genelindeki mühendislik öğrencilerini buluşturan uluslararası öğrenci topluluğu.",
+        "quickLinks": "Hızlı Bağlantılar",
+        "contactTitle": "İletişim",
+        "address": "Ege Üniversitesi, Mühendislik Fakültesi, Bornova / İzmir",
+        "followUs": "Bizi Takip Edin"
     },
     "contact": {
         "title": "BİZE ULAŞIN",

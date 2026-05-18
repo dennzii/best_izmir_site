@@ -7,7 +7,9 @@
         "title3": "beINCI",
         "desc3": "beINCI is our annual national event where we come together with other BEST groups across Türkiye. In addition to trainings focused on team management, project management, and personal development, the event aims to create networking opportunities and strengthen our bonds with other Turkish LBGs.",
         "title4": "BEST Courses",
-        "desc4": "BEST Courses are part of the international BEST tradition, where we engage in academic and cultural exchange with students from across Europe. Alongside educational sessions, the event offers cultural evenings, city tours, and the opportunity to build unforgettable friendships."
+        "desc4": "BEST Courses are part of the international BEST tradition, where we engage in academic and cultural exchange with students from across Europe. Alongside educational sessions, the event offers cultural evenings, city tours, and the opportunity to build unforgettable friendships.",
+        "title5": "EBEC",
+        "desc5": "EUROPEAN BEST ENGINEERING COMPETITION is a team-based competition divided into two categories — innovative design and case study — and consists of 3 levels. Both categories are based on interdisciplinary tasks developed to allow technology students to apply the theoretical knowledge they have gained during their studies. Events are arranged in a pyramid shape, starting at the local level and progressing through a national stage before concluding with the European EBEC Final. EBEC is held once a year, and the process continues from the first local round to the final round of EBEC."
     },
     "eventsPage": {
         "title": "BEST EVENTS",
@@ -64,11 +66,22 @@
         "text3": "Vision: Empowered Diversity\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.\n\nMission: Developing Students\nBEST helps students to achieve an international mindset, to reach a better understanding of cultures and societies and to develop the capacity to work in culturally diverse environments.",
         "readMore": "Read More"
     },
+    "partners": {
+        "title": "OUR PARTNERS",
+        "subtitle": "Organizations and institutions that support us.",
+        "sponsorTitle": "Why Should You Sponsor Us?",
+        "sponsorText": "BEST Izmir is an international student organization operating within Ege University. Since 2008, with over 250 members, we have been an active part of the BEST network across 29 countries in Europe. Our organization hosts events, trainings, and international courses that connect technology students with the industry. Through sponsorship, you can introduce your brand to thousands of young engineering candidates, strengthen your corporate image, and build early connections with the engineers of the future.",
+        "contactButton": "Get in Touch with Us",
+        "sectionTitle": "Our Partners",
+        "sectionSubtitle": "Organizations that support us",
+        "viewAll": "View All Partners"
+    },
     "navbar": {
         "home": "Home",
         "about": "About",
         "events": "Events",
         "team": "Team",
+        "partners": "Partners",
         "contact us": "Contact"
     },
     "welcome": {
@@ -77,7 +90,12 @@
         "word3": "Tea"
     },
     "footer": {
-        "rights": "All rights reserved"
+        "rights": "All rights reserved",
+        "description": "An international student community connecting engineering students across Europe.",
+        "quickLinks": "Quick Links",
+        "contactTitle": "Contact",
+        "address": "Ege University, Faculty of Engineering, Bornova / Izmir",
+        "followUs": "Follow Us"
     },
     "contact": {
         "title": "CONTACT US",

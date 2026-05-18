@@ -12,13 +12,13 @@ export const byNumbersStats = [
         number: "3,300+",
         labelKey: "byNumbers.besties",
         descKey: "byNumbers.bestiesDesc",
-        color: "from-blue-100 to-green-400"
+        color: "from-emerald-400 to-teal-500"
     },
     {
         id: 3,
         number: "86+",
         labelKey: "byNumbers.universities",
         descKey: "byNumbers.universitiesDesc",
-        color: "from-blue-400 to-cyan-300"
+        color: "from-sky-500 to-blue-600"
     }
 ];

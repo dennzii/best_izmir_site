@@ -24,13 +24,13 @@ export const HomeEvents = () => {
                 {/* --- RIGHT TEXT CONTENT (Left on Mobile) --- */}
                 <div className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left">
                     <div className="mb-6">
-                        <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300 drop-shadow-lg mb-2">
+                        <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 dark:from-purple-400 dark:to-pink-300 drop-shadow-lg mb-2">
                             {t("eventsPage.title")}
                         </h2>
                         <div className="h-1 w-24 bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
                     </div>
 
-                    <p className="text-lg md:text-xl text-slate-200 font-light leading-relaxed drop-shadow-md mb-8">
+                    <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 font-light leading-relaxed mb-8">
                         {t("eventsPage.subtitle")}
                     </p>
 
@@ -51,7 +51,7 @@ export const HomeEvents = () => {
                         <img
                             alt="BEST Izmir Events"
                             src={aboutFoto2}
-                            className="relative w-full aspect-video md:aspect-[4/3] rounded-3xl object-cover hover:scale-[1.02] transition-transform duration-500 shadow-2xl border border-white/10"
+                            className="relative w-full aspect-video md:aspect-[4/3] rounded-3xl object-cover hover:scale-[1.02] transition-transform duration-500 shadow-2xl border border-slate-200 dark:border-white/10"
                         />
                     </div>
                 </div>

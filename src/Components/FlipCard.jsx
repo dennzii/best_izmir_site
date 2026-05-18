@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { themes } from '../data/TeamMembers';
+import { themes, lightThemes } from '../data/TeamMembers';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 
 export const FlipCard = ({
   foto,
@@ -11,8 +12,10 @@ export const FlipCard = ({
   variant = 'gold',
 }) => {
   const { t } = useTranslation();
+  const { isDark } = useTheme();
   const [isFlipped, setIsFlipped] = useState(false);
-  const theme = themes[variant] || themes.gold;
+  const themeSet = isDark ? themes : lightThemes;
+  const theme = themeSet[variant] || themeSet.gold;
 
   const cardVariants = {
     flipped:   { rotateY: 180, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } },

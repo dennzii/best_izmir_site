@@ -14,7 +14,7 @@ export const LanguageSwitcher = () => {
     return (
         <div
             onClick={toggleLanguage}
-            className="relative flex items-center w-20 h-10 p-1 bg-black/40 hover:bg-black/60 border border-white/30 backdrop-blur-md rounded-full cursor-pointer transition-colors duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+            className="relative flex items-center w-20 h-10 p-1 bg-white/40 hover:bg-white/60 dark:bg-black/40 dark:hover:bg-black/60 border border-black/20 dark:border-white/30 backdrop-blur-md rounded-full cursor-pointer transition-colors duration-300 shadow-md dark:shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             title="Dili Değiştir / Change Language"
         >
             {/* Background pill that animates */}
@@ -30,12 +30,12 @@ export const LanguageSwitcher = () => {
             {/* Labels */}
             <div className="absolute inset-0 flex items-center justify-between pointer-events-none z-10 w-full h-full text-xs font-bold">
                 <div className="flex-1 flex justify-center">
-                    <span className={`transition-colors duration-300 ${isTurkish ? 'text-white' : 'text-indigo-200'}`}>
+                    <span className={`transition-colors duration-300 ${isTurkish ? 'text-white' : 'text-slate-500 dark:text-indigo-200'}`}>
                         TR
                     </span>
                 </div>
                 <div className="flex-1 flex justify-center">
-                    <span className={`transition-colors duration-300 ${!isTurkish ? 'text-white' : 'text-indigo-200'}`}>
+                    <span className={`transition-colors duration-300 ${!isTurkish ? 'text-white' : 'text-slate-500 dark:text-indigo-200'}`}>
                         EN
                     </span>
                 </div>

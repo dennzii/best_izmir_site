@@ -4,11 +4,16 @@ import { Nav } from "../Components/Nav";
 import { Footer } from "../sections/Footer";
 import Stars from '../Components/Stars';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-//4e717e6c-fdfb-4a60-8e75-3100f0c7004f
+import { useTheme } from '../context/ThemeContext';
+
+const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
+
 function Contact() {
     const { t } = useTranslation();
+    const { isDark } = useTheme();
     const [result, setResult] = useState("");
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -46,7 +51,7 @@ function Contact() {
 
     return (
         <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
-            background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
+            background: isDark ? DARK_BG : LIGHT_BG,
             backgroundSize: 'cover',
             backgroundAttachment: 'fixed'
         }}>
@@ -66,10 +71,10 @@ function Contact() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                    <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
                         {t('contact.title')}
                     </h1>
-                    <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
+                    <p className="text-indigo-600 dark:text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
                         {t('contact.subtitle')}
                     </p>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
@@ -86,8 +91,8 @@ function Contact() {
                         className="space-y-8"
                     >
                         {/* Info Card */}
-                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                            <h3 className="text-2xl font-bold text-white mb-6">{t('contact.contactInfo')}</h3>
+                        <div className="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 p-8 rounded-3xl shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">{t('contact.contactInfo')}</h3>
 
                             <div className="space-y-6">
                                 <ContactItem
@@ -104,8 +109,8 @@ function Contact() {
                         </div>
 
                         {/* Social Media Card */}
-                        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                            <h3 className="text-2xl font-bold text-white mb-6">{t('contact.followUs')}</h3>
+                        <div className="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 p-8 rounded-3xl shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">{t('contact.followUs')}</h3>
                             <div className="flex gap-4">
                                 <SocialButton icon={<FaInstagram />} href="https://www.instagram.com/best.izmir/" />
                                 <SocialButton icon={<FaLinkedin />} href="https://www.linkedin.com/company/bestizmir/" />
@@ -120,8 +125,8 @@ function Contact() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                            <h3 className="text-2xl font-bold text-white mb-8">{t('contact.sendMessage')}</h3>
+                        <form onSubmit={handleSubmit} className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 p-8 md:p-10 rounded-3xl shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">{t('contact.sendMessage')}</h3>
 
                             <div className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,12 +136,12 @@ function Contact() {
                                 <InputGroup label={t('contact.subjectLabel')} type="text" name="subject" placeholder="..." required={true} />
 
                                 <div className="flex flex-col space-y-2">
-                                    <label className="text-sm font-bold text-indigo-300 ml-1">{t('contact.messageLabel')}</label>
+                                    <label className="text-sm font-bold text-indigo-600 dark:text-indigo-300 ml-1">{t('contact.messageLabel')}</label>
                                     <textarea
                                         name="message"
                                         required
                                         rows="5"
-                                        className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
+                                        className="w-full bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-600/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
                                         placeholder="Mesajınızı buraya yazın..."
                                     ></textarea>
                                 </div>
@@ -147,7 +152,7 @@ function Contact() {
                                 >
                                     {t('contact.sendButton')}
                                 </button>
-                                {result && <p className="text-center text-indigo-300 mt-4 font-medium">{result}</p>}
+                                {result && <p className="text-center text-indigo-600 dark:text-indigo-300 mt-4 font-medium">{result}</p>}
                             </div>
                         </form>
                     </motion.div>
@@ -167,12 +172,12 @@ function Contact() {
 // Alt Bileşenler
 const ContactItem = ({ icon, title, content }) => (
     <div className="flex items-start space-x-4">
-        <div className="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 text-xl">
+        <div className="bg-indigo-100 dark:bg-indigo-500/20 p-3 rounded-xl text-indigo-600 dark:text-indigo-400 text-xl">
             {icon}
         </div>
         <div>
-            <h4 className="text-white font-bold text-lg">{title}</h4>
-            <p className="text-gray-400 leading-relaxed font-light">{content}</p>
+            <h4 className="text-slate-900 dark:text-white font-bold text-lg">{title}</h4>
+            <p className="text-slate-500 dark:text-slate-300 leading-relaxed font-light">{content}</p>
         </div>
     </div>
 );
@@ -180,7 +185,7 @@ const ContactItem = ({ icon, title, content }) => (
 const SocialButton = ({ icon, href }) => (
     <a
         href={href}
-        className="bg-white/10 hover:bg-indigo-500 hover:text-white text-gray-300 p-4 rounded-xl text-2xl transition-all duration-300"
+        className="bg-slate-100 dark:bg-white/10 hover:bg-indigo-500 text-slate-600 dark:text-gray-300 hover:text-white p-4 rounded-xl text-2xl transition-all duration-300"
     >
         {icon}
     </a>
@@ -188,12 +193,12 @@ const SocialButton = ({ icon, href }) => (
 
 const InputGroup = ({ label, type, name, placeholder, required }) => (
     <div className="flex flex-col space-y-2">
-        <label className="text-sm font-bold text-indigo-300 ml-1">{label}</label>
+        <label className="text-sm font-bold text-indigo-600 dark:text-indigo-300 ml-1">{label}</label>
         <input
             type={type}
             name={name}
             required={required}
-            className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+            className="w-full bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-600/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
             placeholder={placeholder}
         />
     </div>

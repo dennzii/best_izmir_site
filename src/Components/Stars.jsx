@@ -22,7 +22,7 @@ const Stars = () => {
 
   return (
     // 'fixed' yerine 'absolute' kullanıyoruz ki Parallax katmanıyla beraber aksın
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+    <div className="hidden dark:block absolute top-0 left-0 w-full h-full pointer-events-none z-0">
       
       {/* Küçük Yıldızlar */}
       <div 

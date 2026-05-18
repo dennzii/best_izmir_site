@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import bestmap from "../assets/HomePage/bestMap.png";
+import { useTheme } from '../context/ThemeContext';
+import bestmap from "../assets/HomePage/bestMap2.png";
 import Stars from '../Components/Stars';
 import { useInView } from 'react-intersection-observer'; // BU SATIRI EKLE
 
@@ -12,13 +13,18 @@ import { Nav } from "../Components/Nav";
 import { AboutUs } from "../sections/AboutUs";
 import { HomeEvents } from "../sections/HomeEvents";
 import { HomeContact } from "../sections/HomeContact";
+import { HomeSponsors } from "../sections/HomeSponsors";
 
 // GÖRSEL URL HELPER
 const url = (name, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
+const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
+
 function HomePage() {
   const parallax = useRef(null);
+  const { isDark } = useTheme();
   const [topTriggerRef, inView] = useInView({ threshold: 0 });
 
   // Ekran genişliği kontrolü (Mobil vs Desktop)
@@ -36,18 +42,16 @@ function HomePage() {
   if (isMobile) {
     // --- MOBİL GÖRÜNÜM (Parallax Yok) ---
     return (
-      <div style={{ width: '100%', minHeight: '100vh', background: '#253237', position: 'relative', overflowX: 'hidden' }}>
+      <div style={{ width: '100%', minHeight: '100vh', background: isDark ? DARK_BG : LIGHT_BG, position: 'relative', overflowX: 'hidden' }}>
 
         {/* 1. NAVBAR (Sabit) */}
         <div className="fixed top-0 left-0 w-full z-50">
           <Nav isScrolled={!inView} />
         </div>
 
-        {/* 2. ARKA PLAN (Yıldızlar) */}
+        {/* 2. ARKA PLAN (Yıldızlar + Dekorasyonlar) */}
         <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
-          }}
+          style={{ background: isDark ? DARK_BG : LIGHT_BG }}
         >
           <Stars />
         </div>
@@ -78,6 +82,11 @@ function HomePage() {
             <HomeContact />
           </div>
 
+          {/* SPONSORS */}
+          <div className="w-full py-4">
+            <HomeSponsors />
+          </div>
+
           {/* HARİTA & BY NUMBERS (Üst üste bindirme) */}
           <div className="relative w-full flex flex-col items-center justify-center py-4">
 
@@ -105,7 +114,7 @@ function HomePage() {
 
   // --- DESKTOP GÖRÜNÜM (Parallax Var) ---
   return (
-    <div style={{ width: '100%', height: '100%', background: '#253237' }}>
+    <div style={{ width: '100%', height: '100%', background: isDark ? DARK_BG : LIGHT_BG }}>
       {/* 1. NAVBAR */}
 
       <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
@@ -115,7 +124,7 @@ function HomePage() {
         </div>
       </div>
       {/* 2. PARALLAX KAPSIYICI */}
-      <Parallax ref={parallax} pages={4.0}>
+      <Parallax ref={parallax} pages={5.0}>
 
         {/* --- KATMAN GRUBU A: ARKA PLANLAR --- */}
 
@@ -124,10 +133,7 @@ function HomePage() {
           offset={0}
           speed={0}
           factor={8}
-          style={{
-            background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
-            backgroundSize: 'cover',
-          }}
+          style={{ background: isDark ? DARK_BG : LIGHT_BG, backgroundSize: 'cover' }}
         >
           <Stars />
         </ParallaxLayer>
@@ -139,8 +145,17 @@ function HomePage() {
           />
         </ParallaxLayer>
         {/* Bulut - AboutUs civarında */}
-        <ParallaxLayer offset={1.3} speed={0.8} style={{ opacity: 0.3, pointerEvents: 'none', zIndex: 0 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} alt="cloud" />
+        <ParallaxLayer offset={1.3} speed={0.8} style={{ opacity: isDark ? 0.3 : 0.55, pointerEvents: 'none', zIndex: 0 }}>
+          <img
+            src={url('cloud')}
+            style={{
+              display: 'block',
+              width: '22%',
+              marginLeft: '8%',
+              filter: isDark ? 'none' : 'invert(65%) sepia(40%) saturate(600%) hue-rotate(185deg) brightness(108%)',
+            }}
+            alt="cloud"
+          />
         </ParallaxLayer>
 
         {/* --- KATMAN GRUBU B: SÜSLEMELER --- */}
@@ -148,18 +163,17 @@ function HomePage() {
         {/* DÜZELTME BURADA: BEST MAP (Harita) */}
         {/* ByNumbers arkasında durması lazım. */}
         <ParallaxLayer
-          offset={2.8}
-          speed={0.2} // İçerikten daha yavaş hareket etsin (Derinlik hissi)
+          offset={3.3}
+          speed={0.2}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            opacity: 0.4, // Sayıların okunması için haritayı silikleştirdik
+            opacity: 0.4,
             pointerEvents: 'none',
-            zIndex: 0 // İçeriğin arkasında kalması için 0
+            zIndex: 0
           }}
         >
-          {/* Haritayı ortaladık ve boyutunu ayarladık */}
           <img src={bestmap} style={{ width: '50%', height: 'auto' }} alt="Best Map" />
         </ParallaxLayer>
 
@@ -214,9 +228,21 @@ function HomePage() {
           </div>
         </ParallaxLayer>
 
-        {/* 5. BY NUMBERS */}
+        {/* 5. SPONSORS */}
         <ParallaxLayer
-          offset={2.8}
+          offset={2.85}
+          speed={0.3}
+          factor={0.6}
+          style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', zIndex: 10 }}
+        >
+          <div className="w-full pointer-events-auto">
+            <HomeSponsors />
+          </div>
+        </ParallaxLayer>
+
+        {/* 6. BY NUMBERS */}
+        <ParallaxLayer
+          offset={3.3}
           speed={0.5}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
         >
@@ -225,14 +251,14 @@ function HomePage() {
           </div>
         </ParallaxLayer>
 
-        {/* 6. FOOTER */}
+        {/* 7. FOOTER */}
         <ParallaxLayer
-          offset={3.6}
+          offset={4.1}
           speed={0.5}
-          factor={0.4}
+          factor={0.9}
           style={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
             zIndex: 100
           }}

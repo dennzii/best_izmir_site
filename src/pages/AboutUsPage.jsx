@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 import { Nav } from "../Components/Nav";
 import { Footer } from "../sections/Footer";
 import Stars from '../Components/Stars';
 import { aboutUsContent } from '../data/AboutUsData';
 
+const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
+
 function AboutUsPage() {
     const { t } = useTranslation();
+    const { isDark } = useTheme();
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -25,7 +30,7 @@ function AboutUsPage() {
 
     return (
         <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
-            background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
+            background: isDark ? DARK_BG : LIGHT_BG,
             backgroundSize: 'cover',
             backgroundAttachment: 'fixed'
         }}>
@@ -45,10 +50,10 @@ function AboutUsPage() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16 md:mb-20 px-4"
                 >
-                    <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                    <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
                         {t('navbar.about')}
                     </h1>
-                    <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
+                    <p className="text-indigo-600 dark:text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
                         BEST Izmir & Board of European Students of Technology
                     </p>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
@@ -77,7 +82,7 @@ function AboutUsPage() {
                                                 <div className="h-1 w-24 bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
                                             </div>
                                         )}
-                                        <p className="whitespace-pre-wrap text-lg md:text-xl text-slate-200 font-light leading-relaxed drop-shadow-md">
+                                        <p className="whitespace-pre-wrap text-lg md:text-xl text-slate-700 dark:text-slate-200 font-light leading-relaxed">
                                             {t(textKey)}
                                         </p>
                                     </div>
@@ -116,7 +121,7 @@ function AboutUsPage() {
                                                 <div className="h-1 w-24 bg-purple-500 rounded-full mx-auto md:mx-0 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
                                             </div>
                                         )}
-                                        <p className="whitespace-pre-wrap text-lg md:text-xl text-slate-200 font-light leading-relaxed drop-shadow-md">
+                                        <p className="whitespace-pre-wrap text-lg md:text-xl text-slate-700 dark:text-slate-200 font-light leading-relaxed">
                                             {t(textKey)}
                                         </p>
                                     </div>

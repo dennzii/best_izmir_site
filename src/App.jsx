@@ -4,6 +4,7 @@ import Team from "./pages/Team"
 import Events from "./pages/Events"
 import Contact from "./pages/Contact"
 import AboutUsPage from "./pages/AboutUsPage"
+import Partners from "./pages/Partners"
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -32,6 +33,9 @@ function PageTitleUpdater() {
             case '/contact':
                 title = `${t('navbar.contact us')} | BEST İzmir`;
                 break;
+            case '/partners':
+                title = `${t('navbar.partners')} | BEST İzmir`;
+                break;
         }
 
         document.title = title;
@@ -50,6 +54,7 @@ function App() {
                 <Route path='/team' element={<Team />} />
                 <Route path='/events' element={<Events />} />
                 <Route path='/contact' element={<Contact />} />
+                <Route path='/partners' element={<Partners />} />
             </Routes>
         </div>
     )

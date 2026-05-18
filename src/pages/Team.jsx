@@ -8,9 +8,14 @@ import Stars from '../Components/Stars';
 import { boardMembersData, coordinatorsData, supervisorsData } from '../data/TeamMembers';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
+
+const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
 
 function Team() {
   const { t } = useTranslation();
+  const { isDark } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -40,7 +45,7 @@ function Team() {
 
   return (
     <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
-      background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
+      background: isDark ? DARK_BG : LIGHT_BG,
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed'
     }}>
@@ -81,10 +86,10 @@ function Team() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-20 px-4"
         >
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             {t('teamPage.title')}
           </h1>
-          <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
+          <p className="text-indigo-600 dark:text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
             {t('teamPage.subtitle')}
           </p>
           <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
@@ -94,8 +99,8 @@ function Team() {
         {/* --- BOARD SECTION --- */}
         <div className="w-full max-w-[1536px] px-4 mb-20">
           <div className="flex items-center space-x-4 mb-10">
-            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.board')}</h2>
-            <div className="h-px bg-white/20 flex-grow"></div>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">{t('teamPage.board')}</h2>
+            <div className="h-px bg-slate-300 dark:bg-white/20 flex-grow"></div>
           </div>
 
           <motion.div
@@ -144,7 +149,7 @@ function Team() {
         {/* --- SUPERVISORS SECTION --- */}
         <div className="w-full max-w-[1536px] px-4 mb-20">
           <div className="flex items-center space-x-4 mb-10">
-            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.supervisors')}</h2>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">{t('teamPage.supervisors')}</h2>
             <div className="h-px bg-white/20 flex-grow"></div>
           </div>
 
@@ -186,7 +191,7 @@ function Team() {
         {/* --- NON-BOARD SECTION --- */}
         <div className="w-full max-w-[1536px] px-4">
           <div className="flex items-center space-x-4 mb-10">
-            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.members')}</h2>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">{t('teamPage.members')}</h2>
             <div className="h-px bg-white/20 flex-grow"></div>
           </div>
 

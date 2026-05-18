@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import { Nav } from "../Components/Nav";
 import { Footer } from "../sections/Footer";
 import Stars from '../Components/Stars';
@@ -7,8 +8,12 @@ import { eventsData } from '../data/EventsData';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+const DARK_BG = 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)';
+const LIGHT_BG = 'linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f5f0ff 100%)';
+
 function Events() {
   const { t } = useTranslation();
+  const { isDark } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,7 +27,7 @@ function Events() {
 
   return (
     <main className='relative min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white' style={{
-      background: 'radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)',
+      background: isDark ? DARK_BG : LIGHT_BG,
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed'
     }}>
@@ -42,10 +47,10 @@ function Events() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-24"
         >
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
             {t('eventsPage.title')}
           </h1>
-          <p className="text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
+          <p className="text-indigo-600 dark:text-indigo-300 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
             {t('eventsPage.subtitle')}
           </p>
           <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
@@ -94,7 +99,7 @@ function TimelineItem({ event, index }) {
       <div className="hidden md:block w-5/12"></div>
 
       {/* 2. NOKTA ( timeline üzerindeki ) */}
-      <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-indigo-400 rounded-full border-4 border-[#0F1520] shadow-[0_0_15px_rgba(99,102,241,0.6)] z-20 transform -translate-x-1/2"></div>
+      <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-indigo-400 rounded-full border-4 border-white dark:border-[#0F1520] shadow-[0_0_15px_rgba(99,102,241,0.6)] z-20 transform -translate-x-1/2"></div>
 
 
       {/* 3. İÇERİK KARTI */}
@@ -102,9 +107,9 @@ function TimelineItem({ event, index }) {
 
         {/* Kart Tasarımı */}
         <div className="
-                    relative overflow-hidden rounded-3xl 
-                    bg-white/5 backdrop-blur-md border border-white/10
-                    shadow-[0_8px_32px_rgba(0,0,0,0.3)]
+                    relative overflow-hidden rounded-3xl
+                    bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60
+                    shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]
                     transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(99,102,241,0.15)]
                 ">
 
@@ -125,10 +130,13 @@ function TimelineItem({ event, index }) {
 
           {/* Metin Alanı */}
           <div className="p-6 md:p-8">
-            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors flex items-center gap-2">
               {t(event.titleKey)}
+              {event.logo && (
+                <img src={event.logo} alt="logo" className="h-7 w-auto object-contain inline-block" />
+              )}
             </h3>
-            <p className="text-gray-300 font-light leading-relaxed text-sm md:text-base">
+            <p className="text-slate-600 dark:text-slate-200 font-light leading-relaxed text-sm md:text-base">
               {t(event.descKey)}
             </p>
           </div>
