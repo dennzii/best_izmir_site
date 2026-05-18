@@ -1,64 +1,67 @@
 // Resimler
-import defaultIkon from "../assets/teamPhotos/firat_birds.png";
 
-// NOT: Kendi fotoğraflarınızı `src/assets/teamPhotos/` içine ekledikten sonra
-// buradaki isimleri o dosyaların isimleriyle değiştirebilirsiniz.
-import baskanFoto from "../assets/teamPhotos/fırat_foto.png";
-import vppFoto from "../assets/teamPhotos/fırat_foto.png";
-import vpisFoto from "../assets/teamPhotos/fırat_foto.png";
-import saymanFoto from "../assets/teamPhotos/fırat_foto.png";
-import sekreterFoto from "../assets/teamPhotos/fırat_foto.png";
+// NOT: Kendi fotoğraflarınızı `src/assets/teamPhotos/...` içine ekledikten sonra
+// Klasordeki Dosyanın isimlerini buraya göre göre değiştirin ki stabil kalsın.
+import baskanFoto from "../assets/teamPhotos/Board/Baskan.jpeg";
+import vppFoto from "../assets/teamPhotos/Board/VPP.jpeg";
+import vpisFoto from "../assets/teamPhotos/Board/VPIS.jpeg";
+import saymanFoto from "../assets/teamPhotos/Board/Sayman.jpeg";
+import sekreterFoto from "../assets/teamPhotos/Board/Sekreter.jpeg";
 
-import itCoordFoto from "../assets/teamPhotos/fırat_foto.png";
-import prCoordFoto from "../assets/teamPhotos/fırat_foto.png";
-import designCoordFoto from "../assets/teamPhotos/fırat_foto.png";
-import aktiviteCoordFoto from "../assets/teamPhotos/fırat_foto.png";
-import frCoordFoto from "../assets/teamPhotos/fırat_foto.png";
+import itCoordFoto from "../assets/teamPhotos/Coords/IT.jpeg";
+import prCoordFoto from "../assets/teamPhotos/Coords/PR.jpeg";
+import designCoordFoto from "../assets/teamPhotos/Coords/Design.jpeg";
+import aktiviteCoordFoto from "../assets/teamPhotos/Coords/Activity.jpeg";
+import frCoordFoto from "../assets/teamPhotos/Coords/FR.jpeg";
+
+import spvBaskanFoto from "../assets/teamPhotos/Supervisors/SpvBaskan.jpeg";
+import spvUye1Foto from "../assets/teamPhotos/Supervisors/Spv1.jpeg";
+import spvUye2Foto from "../assets/teamPhotos/Supervisors/Spv2.jpeg";
 
 // EKİP VERİSİ (Burayı düzenleyerek her şeyi değiştirebilirsin)
 const boardMembersData = [
   {
     id: 1,
-    isim: "Yönetim - Başkan",
+    isim: "Gökay Kömürcü",
     gorevKey: "teamMembers.baskanRole",
     foto: baskanFoto,
-    ikon: defaultIkon,
+    // ikon: default// // ikon,
     variant: "gold",
     yaziKey: "teamMembers.baskanQuote",
   },
   {
     id: 2,
-    isim: "Yönetim - VPP",
+    isim: "Fırat Göçmen",
     gorevKey: "teamMembers.vppRole",
     foto: vppFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "blue",
     yaziKey: "teamMembers.vppQuote",
   },
   {
     id: 3,
-    isim: "Yönetim - VPIS",
+    isim: "Baran Tatar",
     gorevKey: "teamMembers.vpisRole",
     foto: vpisFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "green",
     yaziKey: "teamMembers.vpisQuote",
   },
   {
     id: 4,
-    isim: "Yönetim - Sayman",
+    isim: "Mehmet Alptekin Kiraz",
     gorevKey: "teamMembers.saymanRole",
     foto: saymanFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "red",
     yaziKey: "teamMembers.saymanQuote",
   },
   {
     id: 5,
-    isim: "Yönetim - Sekreter",
+    isim: "Ada Demir",
     gorevKey: "teamMembers.sekreterRole",
     foto: sekreterFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "blue",
     yaziKey: "teamMembers.sekreterQuote",
   }
@@ -67,88 +70,135 @@ const boardMembersData = [
 const coordinatorsData = [
   {
     id: 6,
-    isim: "Koord - IT",
+    isim: "Şemal Çiftçi",
     gorevKey: "teamMembers.itCoordRole",
     foto: itCoordFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "gold",
     yaziKey: "teamMembers.itCoordQuote",
   },
   {
     id: 7,
-    isim: "Koord - PR",
+    isim: "Derin Sipahi",
     gorevKey: "teamMembers.prCoordRole",
     foto: prCoordFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "blue",
     yaziKey: "teamMembers.prCoordQuote",
   },
   {
     id: 8,
-    isim: "Koord - Design",
+    isim: "Hazal",
     gorevKey: "teamMembers.designCoordRole",
     foto: designCoordFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "green",
     yaziKey: "teamMembers.designCoordQuote",
   },
   {
     id: 9,
-    isim: "Koord - Aktivite",
+    isim: "Bartu Çetin",
     gorevKey: "teamMembers.aktiviteCoordRole",
     foto: aktiviteCoordFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "red",
     yaziKey: "teamMembers.aktiviteCoordQuote",
   },
   {
     id: 10,
-    isim: "Koord - FR",
+    isim: "Can Bozkurt",
     gorevKey: "teamMembers.frCoordRole",
     foto: frCoordFoto,
-    ikon: defaultIkon,
+    // ikon: default ikon,
     variant: "gold",
     yaziKey: "teamMembers.frCoordQuote",
   }
 ];
 
+const supervisorsData = [
+  {
+    id: 11,
+    isim: "Umut Öztürk",
+    gorevKey: "teamMembers.denetlemeBaskanRole",
+    foto: spvBaskanFoto,
+    variant: "gold",
+    yaziKey: "teamMembers.denetlemeBaskanQuote",
+  },
+  {
+    id: 12,
+    isim: "Serdar Emin Polat",
+    gorevKey: "teamMembers.denetlemeUyeRole",
+    foto: spvUye1Foto,
+    variant: "blue",
+    yaziKey: "teamMembers.denetlemeUyeQuote",
+  },
+  {
+    id: 13,
+    isim: "Beran Çelik",
+    gorevKey: "teamMembers.denetlemeUyeRole",
+    foto: spvUye2Foto,
+    variant: "green",
+    yaziKey: "teamMembers.denetlemeUyeQuote",
+  },
+];
+
 const themes = {
   gold: {
-    wrapperBorder: 'border-white/60 shadow-[0_10px_20px_rgba(251,191,36,0.2)]',
-    frontGradient: 'bg-gradient-to-br from-orange-50 via-amber-100 to-yellow-100',
-    textColor: 'text-amber-900',
-    accentColor: 'text-amber-600 font-medium',
-    backGradient: 'bg-gradient-to-br from-amber-100 to-orange-100',
-    backTextColor: 'text-amber-900',
-    backBorder: 'border-amber-200'
+    border:       'border-amber-500/25',
+    shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(251,191,36,0.08)',
+    frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
+    backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
+    accentBar:    'bg-amber-500',
+    photoBorder:  'border-amber-500/30',
+    photoShadow:  '0 4px 20px rgba(0,0,0,0.5), 0 0 12px rgba(251,191,36,0.15)',
+    nameColor:    'text-slate-100',
+    roleColor:    'text-amber-400',
+    dividerLine:  'bg-amber-500/70',
+    backTextColor:'text-slate-400',
+    quoteColor:   'text-amber-500/30',
   },
   blue: {
-    wrapperBorder: 'border-white/60 shadow-[0_10px_20px_rgba(56,189,248,0.2)]',
-    frontGradient: 'bg-gradient-to-br from-blue-50 via-sky-100 to-cyan-100',
-    textColor: 'text-sky-900',
-    accentColor: 'text-sky-600 font-medium',
-    backGradient: 'bg-gradient-to-br from-sky-100 to-blue-200',
-    backTextColor: 'text-sky-900',
-    backBorder: 'border-sky-200'
+    border:       'border-sky-500/25',
+    shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(56,189,248,0.08)',
+    frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
+    backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
+    accentBar:    'bg-sky-500',
+    photoBorder:  'border-sky-500/30',
+    photoShadow:  '0 4px 20px rgba(0,0,0,0.5), 0 0 12px rgba(56,189,248,0.15)',
+    nameColor:    'text-slate-100',
+    roleColor:    'text-sky-400',
+    dividerLine:  'bg-sky-500/70',
+    backTextColor:'text-slate-400',
+    quoteColor:   'text-sky-500/30',
   },
   red: {
-    wrapperBorder: 'border-white/60 shadow-[0_10px_20px_rgba(251,113,133,0.2)]',
-    frontGradient: 'bg-gradient-to-br from-rose-50 via-pink-100 to-red-100',
-    textColor: 'text-rose-900',
-    accentColor: 'text-rose-500 font-medium',
-    backGradient: 'bg-gradient-to-br from-rose-100 to-pink-200',
-    backTextColor: 'text-rose-900',
-    backBorder: 'border-rose-200'
+    border:       'border-rose-500/25',
+    shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(251,113,133,0.08)',
+    frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
+    backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
+    accentBar:    'bg-rose-500',
+    photoBorder:  'border-rose-500/30',
+    photoShadow:  '0 4px 20px rgba(0,0,0,0.5), 0 0 12px rgba(251,113,133,0.15)',
+    nameColor:    'text-slate-100',
+    roleColor:    'text-rose-400',
+    dividerLine:  'bg-rose-500/70',
+    backTextColor:'text-slate-400',
+    quoteColor:   'text-rose-500/30',
   },
   green: {
-    wrapperBorder: 'border-white/60 shadow-[0_10px_20px_rgba(52,211,153,0.2)]',
-    frontGradient: 'bg-gradient-to-br from-emerald-50 via-teal-100 to-green-100',
-    textColor: 'text-teal-900',
-    accentColor: 'text-teal-600 font-medium',
-    backGradient: 'bg-gradient-to-br from-emerald-100 to-teal-200',
-    backTextColor: 'text-teal-900',
-    backBorder: 'border-emerald-200'
-  }
+    border:       'border-emerald-500/25',
+    shadow:       '0 8px 32px rgba(0,0,0,0.45), 0 0 20px rgba(52,211,153,0.08)',
+    frontBg:      'bg-gradient-to-b from-slate-800 to-slate-900',
+    backBg:       'bg-gradient-to-b from-slate-900 to-slate-800',
+    accentBar:    'bg-emerald-500',
+    photoBorder:  'border-emerald-500/30',
+    photoShadow:  '0 4px 20px rgba(0,0,0,0.5), 0 0 12px rgba(52,211,153,0.15)',
+    nameColor:    'text-slate-100',
+    roleColor:    'text-emerald-400',
+    dividerLine:  'bg-emerald-500/70',
+    backTextColor:'text-slate-400',
+    quoteColor:   'text-emerald-500/30',
+  },
 };
 
-export { boardMembersData, coordinatorsData, themes };
+export { boardMembersData, coordinatorsData, supervisorsData, themes };

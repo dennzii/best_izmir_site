@@ -5,7 +5,7 @@ import { Nav } from "../Components/Nav";
 import { Footer } from "../sections/Footer";
 import { FlipCard } from '../Components/FlipCard';
 import Stars from '../Components/Stars';
-import { boardMembersData, coordinatorsData } from '../data/TeamMembers';
+import { boardMembersData, coordinatorsData, supervisorsData } from '../data/TeamMembers';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -140,6 +140,48 @@ function Team() {
           </motion.div>
         </div>
 
+
+        {/* --- SUPERVISORS SECTION --- */}
+        <div className="w-full max-w-[1536px] px-4 mb-20">
+          <div className="flex items-center space-x-4 mb-10">
+            <h2 className="text-3xl font-bold text-white tracking-wide">{t('teamPage.supervisors')}</h2>
+            <div className="h-px bg-white/20 flex-grow"></div>
+          </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className={`
+                    flex gap-6 w-full
+                    flex-nowrap overflow-x-auto snap-x snap-mandatory justify-start px-2 pb-8
+                    md:flex-wrap md:overflow-visible md:justify-center
+                `}
+          >
+            {supervisorsData.map((member) => (
+              <motion.div
+                key={member.id + "_sv"}
+                variants={itemVariants}
+                className={`
+                        relative h-[300px] md:h-[300px] team-card
+                        flex-shrink-0 snap-center w-[85vw] max-w-[280px]
+                        md:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.25rem)] md:max-w-[280px] md:flex-shrink-0
+                    `}
+              >
+                <FlipCard
+                  foto={member.foto}
+                  isim={member.isim}
+                  gorevKey={member.gorevKey}
+                  yaziKey={member.yaziKey}
+                  variant={member.variant}
+                  ikon={member.ikon}
+                />
+              </motion.div>
+            ))}
+            <div className="w-2 flex-shrink-0 md:hidden"></div>
+          </motion.div>
+        </div>
 
         {/* --- NON-BOARD SECTION --- */}
         <div className="w-full max-w-[1536px] px-4">

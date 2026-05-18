@@ -16,9 +16,9 @@
     "teamMembers": {
         "baskanRole": "Başkan",
         "baskanQuote": "BEST İzmir'i en iyi yerlere taşımak için buradayız.",
-        "vppRole": "VPP",
+        "vppRole": "Proje Başkan Yardımcısı",
         "vppQuote": "Dış ilişkiler ve partnerlikler bizim işimiz.",
-        "vpisRole": "VPIS",
+        "vpisRole": "İç Destek Başkan Yardımcısı",
         "vpisQuote": "İç işleyişi ve sistemlerimizi her zaman geliştiriyoruz.",
         "saymanRole": "Sayman",
         "saymanQuote": "Bütçemiz her zaman sağlam ellerde.",
@@ -26,19 +26,24 @@
         "sekreterQuote": "Her toplantının ve kararın bir kaydı var.",
         "itCoordRole": "IT Coord",
         "itCoordQuote": "Sunucularımız ve kodlarımız asla yorulmaz.",
-        "prCoordRole": "PR Coordie",
+        "prCoordRole": "PR Coord",
         "prCoordQuote": "Hikayemizi en iyi şekilde anlatıyoruz.",
-        "designCoordRole": "Design Coordie",
+        "designCoordRole": "Design Coord",
         "designCoordQuote": "Görünümümüz ve markamız her şeydir.",
-        "aktiviteCoordRole": "Aktivite Coordie",
+        "aktiviteCoordRole": "Aktivite Coord",
         "aktiviteCoordQuote": "Eğlence ve kaynaşma etkinliklerimizden sorumlu kişi.",
-        "frCoordRole": "FR Coordie",
-        "frCoordQuote": "Kurumsal ilişkiler ve fon yaratımından sorumluyum."
+        "frCoordRole": "FR Coord",
+        "frCoordQuote": "Kurumsal ilişkiler ve fon yaratımından sorumluyum.",
+        "denetlemeBaskanRole": "Denetleme Kurulu Başkanı",
+        "denetlemeBaskanQuote": "Topluluğumuzun şeffaflığını ve hesap verebilirliğini güvence altına alıyoruz.",
+        "denetlemeUyeRole": "Denetleme Kurulu Üyesi",
+        "denetlemeUyeQuote": "Faaliyetlerimizin kurallara uygunluğunu titizlikle denetliyoruz."
     },
     "teamPage": {
         "title": "MEET THE TEAM",
         "subtitle": "BEST İzmir'i geleceğe taşıyan dinamik kadromuz.",
         "board": "Yönetim Kurulu",
+        "supervisors": "Denetleme Kurulu",
         "members": "Koordinatörler"
     },
     "byNumbers": {
