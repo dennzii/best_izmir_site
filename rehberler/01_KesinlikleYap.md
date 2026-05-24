@@ -13,40 +13,13 @@ Hepsini yapman zorunlu değil — ama yapanlar her zaman daha iyi bir site bıra
 
 ## 🔁 HER DÖNEM BAŞI YAPILACAKLAR
 
-- [ ] Ekip fotoğraflarını güncelle (`02_KesinlikleYapma.md`)
+- [ ] Ekip fotoğraflarını güncelle (`03_Ekip FotograflarıGuncelle.md`)
 - [ ] İsimleri ve alıntıları güncelle (`TeamMembers.jsx` + `translation.json`)
 - [ ] "Rakamlarla BEST" sayılarını kontrol et (`ByNumbersData.js`)
 - [ ] Sponsor listesini güncelle — ayrılan firmalar var mı? Yeni gelenler?
 - [ ] SSS bölümünü oku — hâlâ geçerli mi? Güncellenecek şey var mı?
 - [ ] Etkinlik bilgilerini kontrol et — yeni etkinlik, değişen tarih?
 - [ ] `git pull` yap — en güncel kod sende olsun
-
----
-
-## 💻 TEKNİK GELİŞTİRME ÖNERİLERİ
-
-Siteyi bir adım öteye taşımak istiyorsan nereden başlayabileceğine dair fikirler:
-
-### Kolay / kısa vadeli
-
-- **Etkinlik kartlarına tarih filtresi** — geçmiş / gelecek etkinlikleri ayır
-- **SSS bölümüne yeni sorular** — PR ekibine "en çok ne soruyorlar" diye sor
-- **Sayfa geçiş animasyonu** — React Router + Framer Motion ile sayfalar arası yumuşak geçiş
-- **"Yukarı çık" butonu** — uzun sayfalar için scroll-to-top
-
-### Orta / dönem projesi
-
-- **Blog / Duyuru bölümü** — etkinlik haberleri için basit bir yapı
-- **Başvuru formu** — Web3Forms ile üye başvurusu
-- **Galeri sayfası** — etkinlik fotoğrafları
-
-### İleri / uzun vadeli
-
-- **CMS entegrasyonu** — içeriklerin kod bilmeden güncellenebilmesi (Contentful, Sanity)
-- **Instagram feed** — son paylaşımları otomatik çek
-- **PWA desteği** — siteyi telefona kurulabilir yap
-
----
 
 ## 📚 KENDİNİ GELİŞTİR
 
