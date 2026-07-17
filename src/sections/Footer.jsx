@@ -3,6 +3,7 @@ import { FaInstagram, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
 import { navLinks } from '../constants';
+import { Link } from 'react-router-dom';
 import logoDark from '../assets/logo_beyaz.png';
 import logoLight from '../assets/logo_normal.png';
 
@@ -18,13 +19,13 @@ export const Footer = () => {
 
         {/* SÜTUN 1: Logo */}
         <div className="flex flex-col gap-4 items-center md:items-start pb-6 md:pb-0">
-          <a href="/">
+          <Link to="/">
             <img
               src={isDark ? logoDark : logoLight}
               alt="BEST İzmir"
               className="h-28 object-contain object-left"
             />
-          </a>
+          </Link>
         </div>
 
         {/* SÜTUN 2: Hızlı Bağlantılar */}
@@ -36,12 +37,12 @@ export const Footer = () => {
           <ul className="space-y-2">
             {navLinks.map(link => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className={`text-sm transition-colors duration-200 ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-500 hover:text-slate-900'}`}
                 >
                   {t(`navbar.${link.label.toLowerCase()}`)}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

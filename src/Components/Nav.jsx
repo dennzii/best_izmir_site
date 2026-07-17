@@ -2,6 +2,7 @@ import logo_beyaz from "../assets/logo_beyaz.png";
 import logo_siyah from "../assets/BEST Izmir Logo Siyah.png";
 import logo from "../assets/logo_normal.png";
 import { navLinks } from "../constants";
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -46,13 +47,13 @@ export const Nav = ({ isScrolled }) => {
         <>
             <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${headerClass}`}>
                 <nav className="flex justify-between items-center max-w-7xl mx-auto px-6">
-                    <a href="/" className="relative z-[60]">
+                    <Link to="/" className="relative z-[60]">
                         <img
                             className={`transition-all duration-300 drop-shadow-lg ${isScrolled ? 'w-24' : 'w-32'}`}
                             src={isDark ? logo_beyaz : logo}
                             alt="Logo"
                         />
-                    </a>
+                    </Link>
 
                     {/* Mobile Menu Toggle Button */}
                     <button
@@ -66,12 +67,12 @@ export const Nav = ({ isScrolled }) => {
                     <ul className="flex space-x-8 max-lg:hidden items-center">
                         {navLinks.map(item => (
                             <li key={item.label} className="group relative">
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.href}
                                     className={`font-bold text-sm tracking-wide transition-colors duration-300 drop-shadow-md ${linkClass}`}
                                 >
                                     {t(`navbar.${item.label.toLowerCase()}`)}
-                                </a>
+                                </Link>
                                 <span className="absolute -bottom-2 left-0 w-0 h-1 bg-purple-500 rounded-full transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(168,85,247,0.7)]"></span>
                             </li>
                         ))}
@@ -114,9 +115,9 @@ export const Nav = ({ isScrolled }) => {
             >
                 <div className="flex flex-col space-y-8">
                     {navLinks.map(item => (
-                        <a
+                        <Link
                             key={item.label}
-                            href={item.href}
+                            to={item.href}
                             onClick={() => setIsOpen(false)}
                             className={`text-xl font-bold tracking-wide transition-colors ${
                                 isDark
@@ -125,7 +126,7 @@ export const Nav = ({ isScrolled }) => {
                             }`}
                         >
                             {t(`navbar.${item.label.toLowerCase()}`)}
-                        </a>
+                        </Link>
                     ))}
 
                     <div className={`pt-8 border-t flex items-center gap-4 ${isDark ? 'border-white/20' : 'border-slate-200'}`}>
