@@ -4,9 +4,8 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./**/@material-tailwind/**/*.{html,js,ts,jsx,tsx,mdx}",
-    "./src/data/**/*.{js,jsx,ts,tsx}" // <-- BU SATIRI EKLEMELİSİN
-
+    "./src/data/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     fontSize: {
