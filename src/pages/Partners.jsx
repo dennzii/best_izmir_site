@@ -15,7 +15,7 @@ import renklerLogo from '../assets/Partnerler Logo/Renkler.webp';
 import upegemLogo from '../assets/Partnerler Logo/UPEGEM.webp';
 import teolLogo from '../assets/Partnerler Logo/Teol.webp';
 import dilekLogo from '../assets/Partnerler Logo/Dilek.webp';
-import englishTimeLogo from '../assets/Partnerler Logo/EnglishTıme.svg';
+import englishTimeLogo from '../assets/Partnerler Logo/EnglishTime.svg';
 import kesiadLogo from '../assets/Partnerler Logo/KESIAD.webp';
 import ikdLogo from '../assets/Partnerler Logo/IKD.webp';
 import kusadasiBelLogo from '../assets/Partnerler Logo/KusadasiBel.webp';

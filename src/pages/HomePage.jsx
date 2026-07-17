@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import bestmapLight from "../assets/HomePage/bestMap2.png";
-import bestmapDark from "../assets/HomePage/bestMap3.png";
+import bestmapLight from "../assets/HomePage/BestMap2.png";
+import bestmapDark from "../assets/HomePage/BestMap3.png";
 import Stars from '../Components/Stars';
 import { useInView } from 'react-intersection-observer';
 
