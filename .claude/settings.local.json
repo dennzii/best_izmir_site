@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.best.eu.org)"
+      "WebFetch(domain:www.best.eu.org)",
+      "PowerShell(git fetch origin 2>$null)"
     ]
   }
 }
