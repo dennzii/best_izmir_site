@@ -9,6 +9,16 @@ import Partners from "./pages/Partners"
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+function ScrollToTop() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return null;
+}
+
 function PageTitleUpdater() {
     const location = useLocation();
     const { t, i18n } = useTranslation();
@@ -47,6 +57,7 @@ function PageTitleUpdater() {
 function App() {
     return (
         <div>
+            <ScrollToTop />
             <PageTitleUpdater />
             <Routes>
                 <Route path='/' element={<HomePage />} />
